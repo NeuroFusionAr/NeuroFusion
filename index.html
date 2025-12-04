@@ -472,6 +472,69 @@
       opacity: 0.92;
     }
 
+    /* LOGIN / REGISTRO */
+    .auth-box {
+      margin-top: 1.5rem;
+      border-radius: 1.1rem;
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      background: radial-gradient(circle at top, #020617, #020617);
+      padding: 1.4rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .auth-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .auth-sub {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      margin-bottom: 0.8rem;
+    }
+
+    .auth-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .auth-input {
+      flex: 1;
+      min-width: 220px;
+      padding: 0.5rem 0.7rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: #020617;
+      color: #f9fafb;
+      font-size: 0.86rem;
+    }
+
+    .auth-btn {
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(90deg, #0ea5e9, #22d3ee);
+      color: #020617;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .auth-btn:hover {
+      opacity: 0.92;
+    }
+
+    .auth-status {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 0.2rem;
+    }
+
     /* PROCESO + RESULTADOS */
     .pill-row {
       display: flex;
@@ -652,7 +715,7 @@
       }
 
       .btn-nav {
-        display: none;
+        display: inline-flex;
       }
 
       header {
@@ -669,10 +732,11 @@
         <a href="#servicios">Servicios</a>
         <a href="#precios">Planes</a>
         <a href="#clientes">Resultados</a>
+        <a href="#login">Iniciar sesión</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <button class="btn-nav" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'});">
-        Agenda una llamada
+      <button class="btn-nav" onclick="document.getElementById('login').scrollIntoView({behavior:'smooth'});">
+        Iniciar sesión
       </button>
     </div>
   </header>
@@ -698,8 +762,8 @@
         </div>
 
         <div class="hero-actions">
-          <button class="btn-primary" onclick="window.open('https://wa.me/5491164834483?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20NeuroFusión','_blank')">
-            Hablar por WhatsApp
+          <button class="btn-primary" onclick="document.getElementById('login').scrollIntoView({behavior:'smooth'});">
+            Iniciar sesión / Registrarme
           </button>
           <button class="btn-secondary" onclick="document.getElementById('precios').scrollIntoView({behavior:'smooth'});">
             Ver planes y precios
@@ -977,6 +1041,35 @@
     </div>
   </section>
 
+  <!-- LOGIN / REGISTRO -->
+  <section id="login">
+    <div class="section-inner">
+      <div class="section-kicker">Cuenta</div>
+      <h2 class="section-title">Iniciá sesión o registrate con tu Gmail.</h2>
+      <p class="section-subtitle">
+        Guardamos tu correo en este dispositivo para asociar tus compras (reels, branding, planes de contenido)
+        y poder contactarte después del pago. No usás contraseña ni creás una cuenta complicada: solo tu email.
+      </p>
+
+      <div class="auth-box">
+        <div class="auth-title">Tus datos de contacto</div>
+        <div class="auth-sub">
+          Ingresá tu correo (preferentemente Gmail). Cuando compres un servicio, usaremos este mail para ubicarte
+          y enviarte la entrega de tu compra.
+        </div>
+        <div class="auth-row">
+          <input id="auth-email" class="auth-input" type="email" placeholder="tuemail@gmail.com" />
+          <button type="button" class="auth-btn" onclick="registerOrLoginIndex()">
+            Guardar / Actualizar correo
+          </button>
+        </div>
+        <div id="auth-status" class="auth-status">
+          No iniciaste sesión todavía.
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PROCESO + RESULTADOS -->
   <section id="clientes">
     <div class="section-inner">
@@ -1112,6 +1205,44 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    function updateAuthStatusIndex() {
+      const storedEmail = localStorage.getItem('neurofusionEmail');
+      const statusEl = document.getElementById('auth-status');
+      const inputEl = document.getElementById('auth-email');
+
+      if (!statusEl) return;
+
+      if (storedEmail) {
+        statusEl.textContent = 'Sesión iniciada como: ' + storedEmail;
+        if (inputEl && !inputEl.value) {
+          inputEl.value = storedEmail;
+        }
+      } else {
+        statusEl.textContent = 'No iniciaste sesión todavía.';
+      }
+    }
+
+    function registerOrLoginIndex() {
+      const inputEl = document.getElementById('auth-email');
+      if (!inputEl) return;
+
+      const email = (inputEl.value || '').trim();
+      if (!email) {
+        alert('Ingresá tu correo (preferentemente Gmail).');
+        return;
+      }
+      if (!email.includes('@')) {
+        alert('Ingresá un correo válido.');
+        return;
+      }
+
+      localStorage.setItem('neurofusionEmail', email);
+      updateAuthStatusIndex();
+      alert('Tu correo se guardó en este dispositivo. Lo usaremos para asociar tus compras.');
+    }
+
+    document.addEventListener('DOMContentLoaded', updateAuthStatusIndex);
   </script>
 </body>
 </html>
