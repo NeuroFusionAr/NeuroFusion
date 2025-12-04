@@ -247,4 +247,251 @@
 
     <!-- PLANES DE DISEÑO / BRANDING -->
     <div class="pricing-card">
-      <div class="pricing-title">�
+      <div class="pricing-title">🎨 Pack de 10 piezas (posts e historias)</div>
+      <div class="pricing-sub">Pack ideal para tener un mes de base de contenido visual cuidado.</div>
+      <div class="price-discount-label">50% OFF sobre el precio real</div>
+      <div class="price-item">
+        <div class="price-item-title">Precio</div>
+        <div class="price-item-prices">
+          <span class="price-item-original">$70.000</span>
+          <span class="price-item-current">Ahora: $35.000</span>
+          <span class="price-item-tag">(50% OFF)</span>
+        </div>
+      </div>
+      <button
+        class="price-item-button"
+        onclick="selectPlan(
+          'Pack de 10 piezas (posts e historias)',
+          '$35.000',
+          'https://mpago.la/1MBbtd3',
+          'https://www.paypal.com/ncp/payment/7JQPMZEZJDUX8'
+        )"
+      >
+        Elegir este servicio
+      </button>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-title">🎨 Pack de 20 piezas</div>
+      <div class="pricing-sub">Para quienes quieren más volumen manteniendo coherencia de marca.</div>
+      <div class="price-discount-label">50% OFF sobre el precio real</div>
+      <div class="price-item">
+        <div class="price-item-title">Precio</div>
+        <div class="price-item-prices">
+          <span class="price-item-original">$120.000</span>
+          <span class="price-item-current">Ahora: $60.000</span>
+          <span class="price-item-tag">(50% OFF)</span>
+        </div>
+      </div>
+      <button
+        class="price-item-button"
+        onclick="selectPlan(
+          'Pack de 20 piezas',
+          '$60.000',
+          'https://mpago.la/2NaYTGo',
+          'https://www.paypal.com/ncp/payment/TNJP696D6VMVL'
+        )"
+      >
+        Elegir este servicio
+      </button>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-title">🧠 Branding express</div>
+      <div class="pricing-sub">Logo, colores, tipografías y portada para redes para ordenar tu presencia.</div>
+      <div class="price-discount-label">50% OFF sobre el precio real</div>
+      <div class="price-item">
+        <div class="price-item-title">Precio</div>
+        <div class="price-item-prices">
+          <span class="price-item-original">$160.000</span>
+          <span class="price-item-current">Ahora: $80.000</span>
+          <span class="price-item-tag">(50% OFF)</span>
+        </div>
+      </div>
+      <button
+        class="price-item-button"
+        onclick="selectPlan(
+          'Branding express',
+          '$80.000',
+          'https://mpago.la/1iXomoG',
+          'https://www.paypal.com/ncp/payment/6YKPRDURZUYKU'
+        )"
+      >
+        Elegir este servicio
+      </button>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-title">🧠 Branding completo con manual básico</div>
+      <div class="pricing-sub">Para construir una identidad sólida y replicable en todas tus piezas.</div>
+      <div class="price-discount-label">50% OFF sobre el precio real</div>
+      <div class="price-item">
+        <div class="price-item-title">Precio</div>
+        <div class="price-item-prices">
+          <span class="price-item-original">$300.000</span>
+          <span class="price-item-current">Ahora: $150.000</span>
+          <span class="price-item-tag">(50% OFF)</span>
+        </div>
+      </div>
+      <button
+        class="price-item-button"
+        onclick="selectPlan(
+          'Branding completo con manual básico',
+          '$150.000',
+          'https://mpago.la/1cZjtyF',
+          'https://www.paypal.com/ncp/payment/UCSTY95PAAJAE'
+        )"
+      >
+        Elegir este servicio
+      </button>
+    </div>
+
+    <!-- PASO 3 Y 4: PAGAR + CONFIRMAR COMPRA -->
+    <div id="payment-box" class="payment-box">
+      <div class="payment-title">3. Elegí cómo querés pagar</div>
+      <div class="payment-sub">
+        Primero seleccioná un plan arriba. Acá abajo vas a ver el detalle y los botones de pago.
+        El pago se hace en una pestaña nueva segura.
+      </div>
+      <div class="payment-plan">
+        Plan elegido: <span id="selected-plan-name">ninguno todavía</span><br />
+        Importe: <span id="selected-plan-price">-</span> ARS
+      </div>
+      <div class="payment-options">
+        <a id="pay-mp" class="payment-btn mp" href="#" target="_blank" rel="noopener noreferrer">
+          Pagar con Mercado Pago (incluye tarjeta)
+        </a>
+        <a id="pay-paypal" class="payment-btn paypal" href="#" target="_blank" rel="noopener noreferrer">
+          Pagar con PayPal
+        </a>
+      </div>
+
+      <div class="confirm-box">
+        <div class="confirm-title">4. Ya pagué, quiero que me contacten</div>
+        <div class="confirm-sub">
+          Después de realizar el pago, completá tu correo y confirmá la compra para que te contactemos
+          con los siguientes pasos y la entrega de tu branding.
+        </div>
+        <div class="contact-row">
+          <div class="contact-label">Tu correo de contacto (Gmail):</div>
+          <input
+            id="contact-email"
+            class="contact-input"
+            type="email"
+            placeholder="tuemail@gmail.com"
+          />
+        </div>
+        <button type="button" class="confirm-main-btn" onclick="confirmPurchase()">
+          Confirmar compra y avisar por WhatsApp
+        </button>
+        <div class="helper-note">
+          Esto no verifica automáticamente el pago (porque se procesa en Mercado Pago / PayPal),
+          pero nos llega tu mensaje con el plan elegido y tu correo para validar la compra y enviarte todo.
+        </div>
+      </div>
+
+      <div class="helper-note">
+        Si preferís coordinar por otra vía (transferencia, efectivo, etc.), podés escribirnos por WhatsApp al
+        <a href="https://wa.me/5491164834483" target="_blank" rel="noopener noreferrer">+54 9 11 6483-4483</a>.
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let currentUserEmail = null;
+    let currentPlanName = null;
+    let currentPlanPrice = null;
+    let currentMpUrl = null;
+    let currentPaypalUrl = null;
+
+    function updateAuthStatus() {
+      const storedEmail = localStorage.getItem('neurofusionEmail');
+      const statusEl = document.getElementById('auth-status');
+      const inputEl = document.getElementById('auth-email');
+      const contactInput = document.getElementById('contact-email');
+
+      if (storedEmail) {
+        currentUserEmail = storedEmail;
+        statusEl.textContent = 'Sesión iniciada como: ' + storedEmail;
+        if (inputEl && !inputEl.value) inputEl.value = storedEmail;
+        if (contactInput && !contactInput.value) contactInput.value = storedEmail;
+      } else {
+        statusEl.textContent = 'No iniciaste sesión todavía.';
+      }
+    }
+
+    function registerOrLogin() {
+      const emailInput = document.getElementById('auth-email');
+      const email = emailInput.value.trim();
+
+      if (!email) {
+        alert('Ingresá tu correo (preferentemente Gmail).');
+        return;
+      }
+
+      if (!email.includes('@')) {
+        alert('Ingresá un correo válido.');
+        return;
+      }
+
+      currentUserEmail = email;
+      localStorage.setItem('neurofusionEmail', email);
+      updateAuthStatus();
+      const contactInput = document.getElementById('contact-email');
+      if (contactInput && !contactInput.value) contactInput.value = email;
+      alert('Tu correo se guardó en este dispositivo.');
+    }
+
+    function selectPlan(name, price, mpUrl, paypalUrl) {
+      currentPlanName = name;
+      currentPlanPrice = price;
+      currentMpUrl = mpUrl;
+      currentPaypalUrl = paypalUrl;
+
+      document.getElementById('selected-plan-name').textContent = name;
+      document.getElementById('selected-plan-price').textContent = price;
+
+      document.getElementById('pay-mp').href = mpUrl || '#';
+      document.getElementById('pay-paypal').href = paypalUrl || '#';
+
+      document.getElementById('payment-box').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function confirmPurchase() {
+      if (!currentPlanName || !currentPlanPrice) {
+        alert('Primero elegí un servicio (plan de diseño / branding).');
+        return;
+      }
+
+      const contactInput = document.getElementById('contact-email');
+      const email = contactInput.value.trim();
+
+      if (!email) {
+        alert('Ingresá tu correo para que podamos contactarte por la compra.');
+        return;
+      }
+      if (!email.includes('@')) {
+        alert('Ingresá un correo válido.');
+        return;
+      }
+
+      currentUserEmail = email;
+      localStorage.setItem('neurofusionEmail', email);
+      updateAuthStatus();
+
+      const mensaje = encodeURIComponent(
+        'Hola, acabo de realizar una compra en NeuroFusión.%0A%0A' +
+        'Servicio: ' + currentPlanName + '%0A' +
+        'Precio: ' + currentPlanPrice + '%0A' +
+        'Correo: ' + email + '%0A%0A' +
+        'Te envío este mensaje desde la página de DISEÑO/BRANDING para que puedan verificar el pago y enviarme los siguientes pasos.'
+      );
+
+      const url = 'https://wa.me/5491164834483?text=' + mensaje;
+      window.open(url, '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', updateAuthStatus);
+  </script>
+</body>
+</html>
