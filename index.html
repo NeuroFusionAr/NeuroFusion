@@ -27,7 +27,7 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
       background: rgba(2, 6, 23, 0.95);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(37, 99, 235, 0.5);
@@ -109,15 +109,16 @@
       justify-content: center;
       font-size: 0.8rem;
       color: #e5e7eb;
+      position: relative;
     }
 
     .avatar-circle::before {
       content: "";
-      width: 50%;
-      height: 50%;
+      width: 52%;
+      height: 52%;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.6);
-      opacity: 0.8;
+      opacity: 0.9;
     }
 
     /* HERO */
@@ -506,75 +507,6 @@
       opacity: 0.92;
     }
 
-    /* LOGIN / REGISTRO */
-    .auth-box {
-      margin-top: 1.5rem;
-      border-radius: 1.1rem;
-      border: 1px solid rgba(56, 189, 248, 0.7);
-      background: radial-gradient(circle at top, #020617, #020617);
-      padding: 1.4rem 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    .auth-title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .auth-sub {
-      font-size: 0.85rem;
-      color: #9ca3af;
-      margin-bottom: 0.8rem;
-    }
-
-    .auth-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      align-items: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .auth-input {
-      flex: 1;
-      min-width: 220px;
-      padding: 0.5rem 0.7rem;
-      border-radius: 0.6rem;
-      border: 1px solid rgba(148, 163, 184, 0.8);
-      background: #020617;
-      color: #f9fafb;
-      font-size: 0.86rem;
-    }
-
-    .auth-btn {
-      padding: 0.55rem 1rem;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(90deg, #0ea5e9, #22d3ee);
-      color: #020617;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .auth-btn:hover {
-      opacity: 0.92;
-    }
-
-    .auth-status {
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-top: 0.2rem;
-    }
-
-    .auth-note {
-      font-size: 0.8rem;
-      color: #9ca3af;
-      margin-top: 0.5rem;
-    }
-
     /* PROCESO + RESULTADOS */
     .pill-row {
       display: flex;
@@ -729,6 +661,110 @@
       background: #020617;
     }
 
+    /* MODAL LOGIN */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 30;
+      padding: 1rem;
+    }
+
+    .modal-backdrop.show {
+      display: flex;
+    }
+
+    .modal-card {
+      max-width: 420px;
+      width: 100%;
+      border-radius: 1.1rem;
+      background: #020617;
+      border: 1px solid rgba(56, 189, 248, 0.8);
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.95);
+      padding: 1.3rem 1.4rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .modal-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .modal-close {
+      border: none;
+      background: transparent;
+      color: #9ca3af;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.1rem 0.4rem;
+    }
+
+    .modal-sub {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      margin-bottom: 0.9rem;
+    }
+
+    .modal-row {
+      display: grid;
+      gap: 0.55rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-label {
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    .modal-input {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: #020617;
+      color: #f9fafb;
+      font-size: 0.86rem;
+    }
+
+    .modal-btn-main {
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(90deg, #0ea5e9, #22d3ee);
+      color: #020617;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .modal-btn-main:hover {
+      opacity: 0.93;
+    }
+
+    .modal-status {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 0.6rem;
+    }
+
+    .modal-note {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-top: 0.4rem;
+    }
+
     @media (max-width: 900px) {
       .hero-inner {
         grid-template-columns: 1fr;
@@ -772,19 +808,52 @@
         <a href="#servicios">Servicios</a>
         <a href="#precios">Planes</a>
         <a href="#clientes">Resultados</a>
-        <a href="#login">Iniciar sesión</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <button
         id="nav-login-btn"
         class="btn-nav"
         type="button"
-        onclick="scrollToLogin()"
+        onclick="openLoginModal()"
       >
         Iniciar sesión
       </button>
     </div>
   </header>
+
+  <!-- MODAL / POPUP LOGIN -->
+  <div id="login-modal" class="modal-backdrop" onclick="backdropClick(event)">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">Iniciar sesión / Registrarme</div>
+        <button class="modal-close" type="button" onclick="closeLoginModal()">✕</button>
+      </div>
+      <div class="modal-sub">
+        Guardamos tu correo y una contraseña en este dispositivo para asociar tus compras (reels, branding, contenido)
+        y reconocerte cuando vuelvas. No es un login bancario: usá una contraseña simple solo para esta página.
+      </div>
+
+      <div class="modal-row">
+        <label class="modal-label" for="auth-email">Gmail</label>
+        <input id="auth-email" class="modal-input" type="email" placeholder="tuemail@gmail.com" />
+      </div>
+      <div class="modal-row">
+        <label class="modal-label" for="auth-password">Contraseña para NeuroFusión</label>
+        <input id="auth-password" class="modal-input" type="password" placeholder="Elegí una contraseña (no uses la del banco)" />
+      </div>
+
+      <button type="button" class="modal-btn-main" onclick="registerOrLoginIndex()">
+        Guardar cuenta / Iniciar sesión
+      </button>
+
+      <div id="auth-status" class="modal-status">
+        No iniciaste sesión todavía.
+      </div>
+      <div class="modal-note">
+        ⚠️ Recomendación: no uses una contraseña importante (banco, mail, etc.). Esto se guarda solo en tu navegador.
+      </div>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -807,7 +876,7 @@
         </div>
 
         <div class="hero-actions">
-          <button class="btn-primary" onclick="scrollToLogin()">
+          <button class="btn-primary" onclick="openLoginModal()">
             Iniciar sesión / Registrarme
           </button>
           <button class="btn-secondary" onclick="document.getElementById('precios').scrollIntoView({behavior:'smooth'});">
@@ -1086,39 +1155,6 @@
     </div>
   </section>
 
-  <!-- LOGIN / REGISTRO -->
-  <section id="login">
-    <div class="section-inner">
-      <div class="section-kicker">Cuenta</div>
-      <h2 class="section-title">Iniciá sesión o registrate con tu Gmail.</h2>
-      <p class="section-subtitle">
-        Guardamos tu correo y una contraseña en este dispositivo para asociar tus compras (reels, branding, planes de contenido)
-        y poder contactarte después del pago. No es un login bancario: usá una contraseña simple que solo uses acá.
-      </p>
-
-      <div class="auth-box">
-        <div class="auth-title">Tus datos de acceso</div>
-        <div class="auth-sub">
-          Ingresá tu Gmail y una contraseña. La próxima vez que entres, si ya guardaste tus datos,
-          te vamos a mostrar que tu sesión está iniciada.
-        </div>
-        <div class="auth-row">
-          <input id="auth-email" class="auth-input" type="email" placeholder="tuemail@gmail.com" />
-          <input id="auth-password" class="auth-input" type="password" placeholder="Contraseña para NeuroFusión" />
-          <button type="button" class="auth-btn" onclick="registerOrLoginIndex()">
-            Crear cuenta / Iniciar sesión
-          </button>
-        </div>
-        <div id="auth-status" class="auth-status">
-          No iniciaste sesión todavía.
-        </div>
-        <div class="auth-note">
-          ⚠️ Recomendación: no uses una contraseña importante (banco, mail, etc.). Esto es solo para este sitio y se guarda en tu propio navegador.
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- PROCESO + RESULTADOS -->
   <section id="clientes">
     <div class="section-inner">
@@ -1255,10 +1291,20 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    function scrollToLogin() {
-      const section = document.getElementById('login');
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+    function openLoginModal() {
+      const modal = document.getElementById('login-modal');
+      if (modal) modal.classList.add('show');
+      setTimeout(updateAuthStatusIndex, 50);
+    }
+
+    function closeLoginModal() {
+      const modal = document.getElementById('login-modal');
+      if (modal) modal.classList.remove('show');
+    }
+
+    function backdropClick(event) {
+      if (event.target.id === 'login-modal') {
+        closeLoginModal();
       }
     }
 
@@ -1267,7 +1313,7 @@
       if (!btn) return;
       btn.classList.add('avatar-btn');
       btn.innerHTML = '<div class="avatar-circle" title="' + email + '"></div>';
-      btn.onclick = scrollToLogin;
+      btn.onclick = openLoginModal;
     }
 
     function setLoggedOutUI() {
@@ -1275,7 +1321,7 @@
       if (!btn) return;
       btn.classList.remove('avatar-btn');
       btn.textContent = 'Iniciar sesión';
-      btn.onclick = scrollToLogin;
+      btn.onclick = openLoginModal;
     }
 
     function updateAuthStatusIndex() {
@@ -1289,8 +1335,9 @@
       if (storedEmail) {
         statusEl.textContent = 'Sesión iniciada como: ' + storedEmail;
         if (inputEmail && !inputEmail.value) inputEmail.value = storedEmail;
-        if (inputPass && !inputPass.value) {
-          // No mostramos contraseña guardada por seguridad visual
+        if (inputPass) {
+          // Por seguridad visual, no mostramos la contraseña guardada
+          inputPass.value = '';
         }
         setLoggedInUI(storedEmail);
       } else {
@@ -1321,7 +1368,6 @@
         return;
       }
 
-      // Guardamos en el navegador del usuario
       localStorage.setItem('neurofusionEmail', email);
       localStorage.setItem('neurofusionPassword', password);
 
