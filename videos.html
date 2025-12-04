@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuroFusión · Videos para redes</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    body { background: #020617; color: #f9fafb; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    header { border-bottom: 1px solid rgba(37, 99, 235, 0.6); background: #020617; position: sticky; top: 0; z-index: 10; }
+    .container { max-width: 900px; margin: 0 auto; padding: 1rem 1.5rem 2.5rem; }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 800; letter-spacing: 1px; font-size: 1.1rem; color: #38bdf8; }
+    .logo span { color: #0ea5e9; }
+
+    .btn-back {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: transparent;
+      color: #e5e7eb;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .btn-back:hover { border-color: #38bdf8; }
+
+    .hero { padding: 1.5rem 1.5rem 0.5rem; background: radial-gradient(circle at top, #0b1120, #020617); }
+    .hero-inner { max-width: 900px; margin: 0 auto; }
+    .eyebrow { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #38bdf8; margin-bottom: 0.4rem; }
+    .hero-title { font-size: 1.9rem; font-weight: 700; margin-bottom: 0.7rem; }
+    .hero-title span { background: linear-gradient(90deg, #0ea5e9, #22c55e); -webkit-background-clip: text; color: transparent; }
+    .hero-subtitle { font-size: 0.95rem; color: #cbd5f5; max-width: 650px; }
+
+    .section { padding: 1.5rem 1.5rem 2.5rem; max-width: 900px; margin: 0 auto; }
+    .section-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .section-subtitle { font-size: 0.9rem; color: #9ca3af; margin-bottom: 1.3rem; }
+
+    .pricing-card {
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      background: radial-gradient(circle at top left, #020617, #020617);
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .pricing-sub { font-size: 0.86rem; color: #9ca3af; margin-bottom: 1rem; }
+
+    .price-discount-label {
+      font-size: 0.75rem; color: #bbf7d0;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 197, 94, 0.7);
+      padding: 0.15rem 0.55rem;
+      background: rgba(22, 163, 74, 0.2);
+      display: inline-block;
+      margin-bottom: 0.7rem;
+    }
+
+    .price-item { margin-bottom: 0.9rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(30, 64, 175, 0.6); }
+    .price-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .price-item-title { font-weight: 500; margin-bottom: 0.2rem; }
+    .price-item-prices { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: baseline; font-size: 0.85rem; }
+    .price-item-original { text-decoration: line-through; color: #9ca3af; }
+    .price-item-current { font-weight: 600; }
+    .price-item-tag { font-size: 0.78rem; color: #bbf7d0; }
+
+    .price-item-button {
+      margin-top: 0.4rem;
+      font-size: 0.82rem;
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      border: 1px solid rgba(56, 189, 248, 0.8);
+      background: transparent;
+      color: #e5e7eb;
+      cursor: pointer;
+    }
+    .price-item-button:hover { background: rgba(15, 23, 42, 0.9); }
+
+    .payment-box {
+      margin-top: 1.5rem;
+      border-radius: 1.1rem;
+      border: 1px solid rgba(56, 189, 248, 0.8);
+      background: radial-gradient(circle at top, #020617, #020617);
+      padding: 1.4rem 1.5rem;
+    }
+
+    .payment-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .payment-sub { font-size: 0.86rem; color: #9ca3af; margin-bottom: 0.9rem; }
+    .payment-plan { font-size: 0.9rem; margin-bottom: 0.7rem; }
+    .payment-plan span { font-weight: 600; }
+
+    .payment-options { display: grid; gap: 0.6rem; margin-bottom: 0.8rem; }
+    .payment-btn {
+      display: inline-block;
+      text-align: center;
+      padding: 0.65rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: rgba(15, 23, 42, 0.95);
+      color: #e5e7eb;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .payment-btn:hover { border-color: #38bdf8; }
+    .payment-btn.mp { border-color: #22c55e; }
+    .payment-btn.paypal { border-color: #0ea5e9; }
+
+    .helper-note { font-size: 0.8rem; color: #9ca3af; margin-top: 0.6rem; }
+
+    @media (max-width: 700px) {
+      .container, .hero, .section { padding-left: 1.1rem; padding-right: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="nav">
+        <div class="logo">Neuro<span>Fusión</span></div>
+        <button class="btn-back" onclick="window.close();">
+          Cerrar pestaña
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Videos para redes</div>
+      <h1 class="hero-title">
+        Elegí tu plan de <span>reels</span> y después el método de pago.
+      </h1>
+      <p class="hero-subtitle">
+        Primero seleccionás el plan que mejor encaje con tu negocio. Abajo vas a ver las opciones de pago:
+        Mercado Pago, PayPal o tarjeta usando Mercado Pago.
+      </p>
+    </div>
+  </section>
+
+  <main class="section">
+    <h2 class="section-title">1. Elegí tu plan de videos</h2>
+    <p class="section-subtitle">
+      Todos los planes están al 50% OFF de lanzamiento. Hacé clic en “Elegir este servicio” para ver los medios de pago.
+    </p>
+
+    <div class="pricing-card">
+      <div class="pricing-title">🎥 Reel corto (hasta 30s, edición completa)</div>
+      <div class="pricing-sub">Perfecto para mensajes directos de venta, noticias cortas o anuncios.</div>
+      <div class="price-discount-label">50% OFF sobre el precio real</div>
+      <div class="price-item">
+        <div class="price-item-title">Precio</div>
+        <div class="price-item-prices">
+          <span class="price-item-original">$50.000</span>
+          <span class="price-item-current">Ahora: $25.000</span>
+          <span class="price-item-tag">(50% OFF)</span>
+        </div>
+      </div>
+      <button
+        class="price-item-button"
+        onclick="selectPlan(
+          'Reel corto (hasta 30s, edición completa)',
+          '$25.000',
+          'https://mpago.la/2EtR3rg',
+          'https://www.paypal.com/ncp/payment/5UVX7WL7ZD2VL'
+        )"
+      >
+        Elegir este servicio
+      </button>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-title">🎥 Pack de 4 reels al mes</div>
+      <div class="pricing-sub">Ideal para aparecer todas las semanas con contenido estratégico.</div>
+      <div class="price-discount-label">50% OFF sobre el precio real</div>
+      <div class="price-item">
+        <div class="price-item-title">Precio mensual</div>
+        <div class="price-item-prices">
+          <span class="price-item-original">$160.000</span>
+          <span class="price-item-current">Ahora: $80.000</span>
+          <span class="price-item-tag">(50% OFF)</span>
+        </div>
+      </div>
+      <button
+        class="price-item-button"
+        onclick="selectPlan(
+          'Pack de 4 reels al mes',
+          '$80.000',
+          'https://mpago.la/1iXomoG',
+          'https://www.paypal.com/ncp/payment/6YKPRDURZUYKU'
+        )"
+      >
+        Elegir este servicio
+      </button>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-title">🎥 Pack de 8 reels al mes</div>
+      <div class="pricing-sub">Para marcas que quieren volumen y presencia fuerte todas las semanas.</div>
+      <div class="price-discount-label">50% OFF sobre el precio real</div>
+      <div class="price-item">
+        <div class="price-item-title">Precio mensual</div>
+        <div class="price-item-prices">
+          <span class="price-item-original">$280.000</span>
+          <span class="price-item-current">Ahora: $140.000</span>
+          <span class="price-item-tag">(50% OFF)</span>
+        </div>
+      </div>
+      <button
+        class="price-item-button"
+        onclick="selectPlan(
+          'Pack de 8 reels al mes',
+          '$140.000',
+          'https://mpago.la/1cZjtyF',
+          'https://www.paypal.com/ncp/payment/UCSTY95PAAJAE'
+        )"
+      >
+        Elegir este servicio
+      </button>
+    </div>
+
+    <div id="payment-box" class="payment-box">
+      <div class="payment-title">2. Elegí cómo querés pagar</div>
+      <div class="payment-sub">
+        Primero seleccioná un plan arriba. Acá abajo vas a ver el detalle y los botones de pago.
+      </div>
+      <div class="payment-plan">
+        Plan elegido: <span id="selected-plan-name">ninguno todavía</span><br />
+        Importe: <span id="selected-plan-price">-</span> ARS
+      </div>
+      <div class="payment-options">
+        <a id="pay-mp" class="payment-btn mp" href="#" target="_blank" rel="noopener noreferrer">
+          Pagar con Mercado Pago (incluye tarjeta)
+        </a>
+        <a id="pay-paypal" class="payment-btn paypal" href="#" target="_blank" rel="noopener noreferrer">
+          Pagar con PayPal
+        </a>
+        <a id="pay-card" class="payment-btn" href="#" target="_blank" rel="noopener noreferrer">
+          Pagar con tarjeta (vía Mercado Pago)
+        </a>
+      </div>
+      <div class="helper-note">
+        Si preferís coordinar por otra vía (transferencia, efectivo, etc.), podés escribirnos por WhatsApp al
+        <a href="https://wa.me/5491164834483" target="_blank" rel="noopener noreferrer">+54 9 11 6483-4483</a>.
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function selectPlan(name, price, mpUrl, paypalUrl) {
+      document.getElementById('selected-plan-name').textContent = name;
+      document.getElementById('selected-plan-price').textContent = price;
+
+      document.getElementById('pay-mp').href = mpUrl;
+      document.getElementById('pay-paypal').href = paypalUrl;
+      // Para tarjeta usamos el mismo link de MP
+      document.getElementById('pay-card').href = mpUrl;
+
+      document.getElementById('payment-box').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
