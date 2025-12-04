@@ -21,6 +21,7 @@
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
     header {
@@ -350,7 +351,7 @@
       margin-bottom: 0.25rem;
     }
 
-    /* PRECIOS */
+    /* PRECIOS (resumen) */
     .pricing-section {
       background: radial-gradient(circle at top, #020617, #020617);
       border-top: 1px solid rgba(30, 64, 175, 0.7);
@@ -418,14 +419,7 @@
     }
 
     .price-item {
-      margin-bottom: 0.9rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid rgba(30, 64, 175, 0.6);
-    }
-
-    .price-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
+      margin-bottom: 0.6rem;
     }
 
     .price-item-title {
@@ -455,28 +449,27 @@
       color: #bbf7d0;
     }
 
-    .price-item-actions {
-      margin-top: 0.35rem;
-    }
-
-    .price-item-button {
-      font-size: 0.78rem;
-      border-radius: 999px;
-      padding: 0.25rem 0.8rem;
-      border: 1px solid rgba(56, 189, 248, 0.8);
-      background: transparent;
-      color: #e5e7eb;
-      cursor: pointer;
-    }
-
-    .price-item-button:hover {
-      background: rgba(15, 23, 42, 0.9);
-    }
-
     .pricing-note {
       font-size: 0.75rem;
       color: #9ca3af;
       margin-top: 0.4rem;
+    }
+
+    .btn-pricing {
+      width: 100%;
+      padding: 0.8rem 1.2rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-top: 0.6rem;
+      background: linear-gradient(90deg, #0ea5e9, #22d3ee);
+      color: #020617;
+    }
+
+    .btn-pricing:hover {
+      opacity: 0.92;
     }
 
     /* PROCESO + RESULTADOS */
@@ -631,109 +624,6 @@
       font-size: 0.8rem;
       color: #9ca3af;
       background: #020617;
-    }
-
-    /* MODAL DE PAGO */
-    .payment-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.85);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 50;
-    }
-
-    .payment-backdrop.show {
-      display: flex;
-    }
-
-    .payment-modal {
-      background: #020617;
-      border-radius: 1rem;
-      border: 1px solid rgba(56, 189, 248, 0.8);
-      max-width: 420px;
-      width: 100%;
-      padding: 1.4rem 1.6rem;
-      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.95);
-      position: relative;
-    }
-
-    .payment-modal-title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .payment-modal-sub {
-      font-size: 0.86rem;
-      color: #9ca3af;
-      margin-bottom: 0.9rem;
-    }
-
-    .payment-price {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.9rem;
-      color: #e0f2fe;
-    }
-
-    .payment-price span {
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: #9ca3af;
-      margin-left: 0.3rem;
-    }
-
-    .payment-options {
-      display: grid;
-      gap: 0.6rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .payment-btn {
-      width: 100%;
-      padding: 0.7rem 1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.95);
-      color: #e5e7eb;
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .payment-btn:hover {
-      border-color: #38bdf8;
-    }
-
-    .payment-btn.mp {
-      border-color: #22c55e;
-    }
-
-    .payment-btn.paypal {
-      border-color: #0ea5e9;
-    }
-
-    .payment-note {
-      font-size: 0.78rem;
-      color: #9ca3af;
-    }
-
-    .payment-close {
-      position: absolute;
-      top: 0.7rem;
-      right: 0.9rem;
-      font-size: 1.1rem;
-      cursor: pointer;
-      color: #9ca3af;
-    }
-
-    .payment-close:hover {
-      color: #e5e7eb;
     }
 
     @media (max-width: 900px) {
@@ -917,14 +807,14 @@
     </div>
   </section>
 
-  <!-- PRECIOS -->
+  <!-- PRECIOS RESUMEN -->
   <section id="precios" class="pricing-section">
     <div class="section-inner">
       <div class="section-kicker">Planes y precios</div>
       <h2 class="section-title">50% de descuento de lanzamiento · Tu inversión vuelve en clientes.</h2>
       <p class="section-subtitle">
         Mostramos siempre el precio real y el precio con 50% OFF para que tus clientes vean el valor real del servicio.
-        Los valores están expresados en pesos argentinos (ARS).
+        Los valores están expresados en pesos argentinos (ARS). Al hacer clic en cada botón, vas a una página donde elegís el plan y el método de pago.
       </p>
 
       <div class="pricing-grid grid-3">
@@ -934,78 +824,38 @@
           <div class="pricing-title">Reels estratégicos para tu marca</div>
           <div class="pricing-sub">Ideal para emprendedores que quieren vender con video sin volverse editores.</div>
 
-          <div class="price-discount-label">Cada plan con 50% OFF sobre el precio real</div>
+          <div class="price-discount-label">Todos los planes con 50% OFF</div>
 
           <div class="price-table">
             <div class="price-item">
-              <div class="price-item-title">🎥 Reel corto (hasta 30s, edición completa)</div>
+              <div class="price-item-title">Reel corto (hasta 30s)</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$50.000</span>
                 <span class="price-item-current">Ahora: $25.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    'Reel corto (hasta 30s, edición completa)',
-                    '$25.000',
-                    'https://mpago.la/2EtR3rg',
-                    'https://www.paypal.com/ncp/payment/5UVX7WL7ZD2VL',
-                    'https://mpago.la/2EtR3rg'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
-
             <div class="price-item">
-              <div class="price-item-title">🎥 Pack de 4 reels al mes</div>
+              <div class="price-item-title">Pack 4 reels al mes</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$160.000</span>
                 <span class="price-item-current">Ahora: $80.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    'Pack de 4 reels al mes',
-                    '$80.000',
-                    'https://mpago.la/1iXomoG',
-                    'https://www.paypal.com/ncp/payment/6YKPRDURZUYKU',
-                    'https://mpago.la/1iXomoG'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
-
             <div class="price-item">
-              <div class="price-item-title">🎥 Pack de 8 reels al mes</div>
+              <div class="price-item-title">Pack 8 reels al mes</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$280.000</span>
                 <span class="price-item-current">Ahora: $140.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    'Pack de 8 reels al mes',
-                    '$140.000',
-                    'https://mpago.la/1cZjtyF',
-                    'https://www.paypal.com/ncp/payment/UCSTY95PAAJAE',
-                    'https://mpago.la/1cZjtyF'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
           </div>
+
+          <button class="btn-pricing" onclick="window.open('videos.html','_blank')">
+            Quiero los videos para reels
+          </button>
 
           <div class="pricing-note">
             Perfecto si hoy casi no publicás o tus reels no convierten en consultas.
@@ -1018,101 +868,46 @@
           <div class="pricing-title">Identidad visual y piezas para redes</div>
           <div class="pricing-sub">Para que tu perfil se vea tan profesional como lo que ofrecés.</div>
 
-          <div class="price-discount-label">Cada plan con 50% OFF sobre el precio real</div>
+          <div class="price-discount-label">Todos los planes con 50% OFF</div>
 
           <div class="price-table">
             <div class="price-item">
-              <div class="price-item-title">🎨 Pack de 10 piezas (posts e historias)</div>
+              <div class="price-item-title">Pack 10 piezas (posts + historias)</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$70.000</span>
                 <span class="price-item-current">Ahora: $35.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    'Pack de 10 piezas (posts e historias)',
-                    '$35.000',
-                    'https://mpago.la/1MBbtd3',
-                    'https://www.paypal.com/ncp/payment/7JQPMZEZJDUX8',
-                    'https://mpago.la/1MBbtd3'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
-
             <div class="price-item">
-              <div class="price-item-title">🎨 Pack de 20 piezas</div>
+              <div class="price-item-title">Pack 20 piezas</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$120.000</span>
                 <span class="price-item-current">Ahora: $60.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    'Pack de 20 piezas',
-                    '$60.000',
-                    'https://mpago.la/2NaYTGo',
-                    'https://www.paypal.com/ncp/payment/TNJP696D6VMVL',
-                    'https://mpago.la/2NaYTGo'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
-
             <div class="price-item">
-              <div class="price-item-title">🧠 Branding express</div>
+              <div class="price-item-title">Branding express</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$160.000</span>
                 <span class="price-item-current">Ahora: $80.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    'Branding express',
-                    '$80.000',
-                    'https://mpago.la/1iXomoG',
-                    'https://www.paypal.com/ncp/payment/6YKPRDURZUYKU',
-                    'https://mpago.la/1iXomoG'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
-
             <div class="price-item">
-              <div class="price-item-title">🧠 Branding completo con manual básico</div>
+              <div class="price-item-title">Branding completo + manual básico</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$300.000</span>
                 <span class="price-item-current">Ahora: $150.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    'Branding completo con manual básico',
-                    '$150.000',
-                    'https://mpago.la/1cZjtyF',
-                    'https://www.paypal.com/ncp/payment/UCSTY95PAAJAE',
-                    'https://mpago.la/1cZjtyF'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
           </div>
+
+          <button class="btn-pricing" onclick="window.open('branding.html','_blank')">
+            Quiero mejorar mi branding
+          </button>
 
           <div class="pricing-note">
             Ideal si tu perfil no refleja todavía el nivel real de tu servicio.
@@ -1125,124 +920,54 @@
           <div class="pricing-title">Texto que vende y contenido constante</div>
           <div class="pricing-sub">Para que nunca más te quedes sin ideas ni sin contenido.</div>
 
-          <div class="price-discount-label">Cada plan con 50% OFF sobre el precio real</div>
+          <div class="price-discount-label">Todos los planes con 50% OFF</div>
 
           <div class="price-table">
             <div class="price-item">
-              <div class="price-item-title">✍️ 10 guiones para reels</div>
+              <div class="price-item-title">10 guiones para reels</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$50.000</span>
                 <span class="price-item-current">Ahora: $25.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    '10 guiones para reels',
-                    '$25.000',
-                    'https://mpago.la/2EtR3rg',
-                    'https://www.paypal.com/ncp/payment/5UVX7WL7ZD2VL',
-                    'https://mpago.la/2EtR3rg'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
-
             <div class="price-item">
-              <div class="price-item-title">✍️ 15 textos para posts e historias</div>
+              <div class="price-item-title">15 textos para posts e historias</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$40.000</span>
                 <span class="price-item-current">Ahora: $20.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    '15 textos para posts e historias',
-                    '$20.000',
-                    'https://mpago.la/1Cs6L1t',
-                    'https://www.paypal.com/ncp/payment/6TW6ZZA5JE9EJ',
-                    'https://mpago.la/1Cs6L1t'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
-
             <div class="price-item">
-              <div class="price-item-title">✍️ Combo guiones + textos (10 guiones + 15 textos)</div>
+              <div class="price-item-title">Combo guiones + textos</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$80.000</span>
                 <span class="price-item-current">Ahora: $40.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    'Combo guiones + textos (10 guiones + 15 textos)',
-                    '$40.000',
-                    'https://mpago.la/2HWEkSW',
-                    'https://www.paypal.com/ncp/payment/K9W2V96JHMLWJ',
-                    'https://mpago.la/2HWEkSW'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
-
             <div class="price-item">
-              <div class="price-item-title">📅 Plan Start (8 posts + 4 reels al mes)</div>
+              <div class="price-item-title">Plan Start (8 posts + 4 reels)</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$300.000</span>
                 <span class="price-item-current">Ahora: $150.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    'Plan Start (8 posts + 4 reels al mes)',
-                    '$150.000',
-                    'https://mpago.la/1oMr3Tj',
-                    'https://www.paypal.com/ncp/payment/UCSTY95PAAJAE',
-                    'https://mpago.la/1oMr3Tj'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
-
             <div class="price-item">
-              <div class="price-item-title">📅 Plan Pro (16 posts + 8 reels al mes)</div>
+              <div class="price-item-title">Plan Pro (16 posts + 8 reels)</div>
               <div class="price-item-prices">
                 <span class="price-item-original">$500.000</span>
                 <span class="price-item-current">Ahora: $250.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
-              <div class="price-item-actions">
-                <button
-                  class="price-item-button"
-                  onclick="openPaymentModal(
-                    'Plan Pro (16 posts + 8 reels al mes)',
-                    '$250.000',
-                    'https://mpago.la/1uejHjA',
-                    'https://www.paypal.com/ncp/payment/SVMV64WQ85Z9A',
-                    'https://mpago.la/1uejHjA'
-                  )"
-                >
-                  Elegir este plan
-                </button>
-              </div>
             </div>
           </div>
+
+          <button class="btn-pricing" onclick="window.open('contenido.html','_blank')">
+            Quiero el plan de contenido
+          </button>
 
           <div class="pricing-note">
             Para quienes quieren delegar la parte creativa y enfocarse en atender clientes.
@@ -1381,72 +1106,12 @@
     </div>
   </section>
 
-  <!-- MODAL DE PAGO -->
-  <div id="payment-modal" class="payment-backdrop" onclick="backdropClick(event)">
-    <div class="payment-modal">
-      <div class="payment-close" onclick="closePaymentModal()">×</div>
-      <div class="payment-modal-title">
-        Plan seleccionado: <span id="payment-plan-name">Plan</span>
-      </div>
-      <div class="payment-modal-sub">
-        Elegí cómo querés pagar. Te vamos a llevar a una pasarela de pago segura.
-      </div>
-      <div class="payment-price">
-        Total: <span id="payment-plan-price">$0</span> <span>ARS</span>
-      </div>
-
-      <div class="payment-options">
-        <a id="payment-mp-link" class="payment-btn mp" href="#" target="_blank" rel="noopener noreferrer">
-          Pagar con Mercado Pago
-        </a>
-        <a id="payment-paypal-link" class="payment-btn paypal" href="#" target="_blank" rel="noopener noreferrer">
-          Pagar con PayPal
-        </a>
-        <a id="payment-card-link" class="payment-btn" href="#" target="_blank" rel="noopener noreferrer">
-          Pagar con tarjeta de débito / crédito
-        </a>
-      </div>
-
-      <div class="payment-note">
-        Si tenés dudas o querés pagar por otro medio, escribinos por WhatsApp y te ayudamos con el proceso.
-      </div>
-    </div>
-  </div>
-
   <footer>
     © <span id="year"></span> NeuroFusión · Contenido, Branding y Copy con IA · Todos los derechos reservados
   </footer>
 
   <script>
-    // Año automático
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    function openPaymentModal(planName, priceText, mpUrl, paypalUrl, cardUrl) {
-      document.getElementById("payment-plan-name").textContent = planName;
-      document.getElementById("payment-plan-price").textContent = priceText;
-
-      document.getElementById("payment-mp-link").href = mpUrl || "#";
-      document.getElementById("payment-paypal-link").href = paypalUrl || "#";
-      document.getElementById("payment-card-link").href = cardUrl || mpUrl || "#";
-
-      document.getElementById("payment-modal").classList.add("show");
-    }
-
-    function closePaymentModal() {
-      document.getElementById("payment-modal").classList.remove("show");
-    }
-
-    function backdropClick(event) {
-      if (event.target.id === "payment-modal") {
-        closePaymentModal();
-      }
-    }
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") {
-        closePaymentModal();
-      }
-    });
   </script>
 </body>
 </html>
