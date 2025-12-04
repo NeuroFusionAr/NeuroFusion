@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuroFusión · Contenido, Branding y Copy con IA</title>
+  <meta name="description" content="NeuroFusión: contenido, branding y copy con IA para convertir tu Instagram en una marca premium que vende todos los días. Planes mensuales, reels, fotos y estrategia.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #020617;
+      color: #f9fafb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(2, 6, 23, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(37, 99, 235, 0.5);
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+      color: #38bdf8;
+    }
+
+    .logo span {
+      color: #0ea5e9;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #e5e7eb;
+    }
+
+    .nav-links a:hover {
+      color: #22d3ee;
+    }
+
+    .btn-nav {
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.8);
+      font-size: 0.85rem;
+      background: transparent;
+      color: #e5e7eb;
+      cursor: pointer;
+    }
+
+    .btn-nav:hover {
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    /* HERO */
+    .hero {
+      padding: 3.5rem 1.5rem 3rem;
+      background: radial-gradient(circle at top, #0b1120, #020617);
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #38bdf8;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(90deg, #0ea5e9, #22c55e);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      color: #cbd5f5;
+      margin-bottom: 1.5rem;
+      font-size: 0.98rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      border-radius: 999px;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .badge-50 {
+      border-color: rgba(248, 250, 252, 0.9);
+      background: rgba(22, 163, 74, 0.18);
+      color: #bbf7d0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      padding: 0.85rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #0ea5e9, #22d3ee);
+      color: #020617;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      color: #e5e7eb;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.92;
+    }
+
+    .btn-secondary:hover {
+      border-color: #38bdf8;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 0.7rem;
+    }
+
+    .hero-card {
+      border-radius: 1.4rem;
+      padding: 1.4rem;
+      background: radial-gradient(circle at top left, #1e293b, #020617);
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.9);
+      font-size: 0.8rem;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-pill {
+      font-size: 0.72rem;
+      border-radius: 999px;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid rgba(52, 211, 153, 0.6);
+      color: #bbf7d0;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .ba-box {
+      border-radius: 0.9rem;
+      padding: 0.7rem;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .ba-label {
+      font-size: 0.7rem;
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .ba-label.bad {
+      color: #f97373;
+    }
+
+    .ba-label.good {
+      color: #4ade80;
+    }
+
+    .ba-item {
+      font-size: 0.74rem;
+      margin-bottom: 0.15rem;
+      color: #e5e7eb;
+    }
+
+    .hero-stat {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 0.5rem;
+    }
+
+    .hero-highlight {
+      font-size: 0.78rem;
+      margin-top: 0.5rem;
+      color: #a5b4fc;
+    }
+
+    /* SECCIONES GENERALES */
+    section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #38bdf8;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+
+    .section-subtitle {
+      color: #9ca3af;
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+      max-width: 640px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* SERVICIOS */
+    .card {
+      border-radius: 1.1rem;
+      padding: 1.3rem;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(37, 99, 235, 0.8);
+      font-size: 0.9rem;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .card-tag {
+      font-size: 0.72rem;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .card-list {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: #e5e7eb;
+    }
+
+    .card-list li {
+      margin-left: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* PRECIOS */
+    .pricing-section {
+      background: radial-gradient(circle at top, #020617, #020617);
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      border-bottom: 1px solid rgba(30, 64, 175, 0.7);
+    }
+
+    .pricing-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .pricing-card {
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      background: radial-gradient(circle at top left, #020617, #020617);
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card.popular {
+      border-color: #22d3ee;
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.7rem;
+      border-radius: 999px;
+      padding: 0.2rem 0.7rem;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.8);
+      color: #e0f2fe;
+    }
+
+    .pricing-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .pricing-sub {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 1rem;
+    }
+
+    .price-discount-label {
+      font-size: 0.75rem;
+      color: #bbf7d0;
+      border-radius: 999px;
+      border: 1px solid rgba(34, 197, 94, 0.7);
+      padding: 0.15rem 0.55rem;
+      background: rgba(22, 163, 74, 0.2);
+      display: inline-block;
+      margin-bottom: 0.7rem;
+    }
+
+    .pricing-note {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-top: 0.4rem;
+    }
+
+    .btn-pricing {
+      width: 100%;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #0ea5e9, #22d3ee);
+      color: #020617;
+      margin-top: 0.4rem;
+    }
+
+    .btn-pricing:hover {
+      opacity: 0.92;
+    }
+
+    /* Tabla de ítems con 50% OFF */
+    .price-table {
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: #e5e7eb;
+    }
+
+    .price-item {
+      margin-bottom: 0.8rem;
+    }
+
+    .price-item-title {
+      font-weight: 500;
+      margin-bottom: 0.15rem;
+    }
+
+    .price-item-prices {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      align-items: baseline;
+      font-size: 0.8rem;
+    }
+
+    .price-item-original {
+      text-decoration: line-through;
+      color: #9ca3af;
+    }
+
+    .price-item-current {
+      font-weight: 600;
+    }
+
+    .price-item-tag {
+      font-size: 0.75rem;
+      color: #bbf7d0;
+    }
+
+    /* PROCESO + RESULTADOS */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+    }
+
+    .steps {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 0.87rem;
+    }
+
+    .step-number {
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 999px;
+      border: 1px solid #38bdf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #e0f2fe;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    /* TESTIMONIOS */
+    .testimonial-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .testimonial {
+      font-size: 0.9rem;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 1rem;
+      padding: 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    .testimonial-name {
+      margin-top: 0.6rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #e5e7eb;
+    }
+
+    .testimonial-tag {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    /* CONTACTO */
+    .contact-box {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.85rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.6rem 0.7rem;
+      border-radius: 0.7rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #020617;
+      color: #f9fafb;
+      font-size: 0.86rem;
+    }
+
+    .contact-form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 0.35rem;
+    }
+
+    .whatsapp-box {
+      border-radius: 1.1rem;
+      border: 1px solid rgba(22, 163, 74, 0.9);
+      background: radial-gradient(circle at top, #166534, #022c22);
+      padding: 1.2rem;
+      font-size: 0.9rem;
+      color: #e5f9ee;
+    }
+
+    .whatsapp-box strong {
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .whatsapp-link {
+      display: inline-block;
+      margin-top: 0.7rem;
+      padding: 0.6rem 1.1rem;
+      border-radius: 999px;
+      background: #f9fafb;
+      color: #022c22;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+
+    .whatsapp-link:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+      padding: 1.4rem 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      background: #020617;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2.5rem;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .btn-nav {
+        display: none;
+      }
+
+      header {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Neuro<span>Fusión</span></div>
+      <nav class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#precios">Planes</a>
+        <a href="#clientes">Resultados</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="btn-nav" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'});">
+        Agenda una llamada
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Contenido, branding y copy con IA</div>
+        <h1 class="hero-title">
+          De perfil random a <span>marca premium</span> que vende todos los días.
+        </h1>
+        <p class="hero-subtitle">
+          En NeuroFusión transformamos tu Instagram en una vidriera profesional:
+          reels, piezas de diseño, branding y copys estratégicos con IA para que dejes de perder
+          clientes por un perfil que no refleja el valor que tenés.
+        </p>
+
+        <div class="hero-badges">
+          <div class="badge">Especialistas en negocios de servicios y coaches</div>
+          <div class="badge">Planes mensuales de contenido</div>
+          <div class="badge badge-50">Lanzamiento · Todos los servicios con 50% OFF</div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="window.open('https://wa.me/5491164834483?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20NeuroFusión','_blank')">
+            Hablar por WhatsApp
+          </button>
+          <button class="btn-secondary" onclick="document.getElementById('precios').scrollIntoView({behavior:'smooth'});">
+            Ver planes y precios
+          </button>
+        </div>
+        <div class="hero-note">
+          *Plazas limitadas para asegurar calidad en cada cuenta.
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="hero-card-title">Antes / Después · Perfil de Instagram</div>
+          <div class="hero-pill">Simulación realista</div>
+        </div>
+        <div class="before-after">
+          <div class="ba-box">
+            <div class="ba-label bad">Antes</div>
+            <div class="ba-item">• Feed desordenado y poco profesional</div>
+            <div class="ba-item">• Reels sin estructura ni gancho</div>
+            <div class="ba-item">• Biografía confusa, nadie entiende qué hacés</div>
+            <div class="ba-item">• Casi nadie pregunta precio</div>
+          </div>
+          <div class="ba-box">
+            <div class="ba-label good">Después con NeuroFusión</div>
+            <div class="ba-item">• Marca clara, moderna y coherente</div>
+            <div class="ba-item">• Reels optimizados para venta</div>
+            <div class="ba-item">• Copy con IA que explica, conecta y vende</div>
+            <div class="ba-item">• Más consultas calificadas por semana</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <span>En promedio nuestros clientes:</span>
+          <span>+300% consultas en el primer mes*</span>
+        </div>
+        <div class="hero-highlight">
+          *Indicador aproximado según casos reales. Tu resultado depende de tu nicho y constancia.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="section-inner">
+      <div class="section-kicker">Qué hacemos</div>
+      <h2 class="section-title">Servicios pensados para vender, no solo para “verse lindo”.</h2>
+      <p class="section-subtitle">
+        Cada pieza de contenido, cada reel y cada texto se diseña con un objetivo: que más personas
+        entiendan qué ofrecés, confíen en vos y te escriban para comprar.
+      </p>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-tag">Reels estratégicos</div>
+              <div class="card-title">Videos que venden por vos</div>
+            </div>
+          </div>
+          <p>
+            Creamos reels pensados para captar atención en los primeros 3 segundos, explicar lo que hacés
+            y llevar a la acción (DM, link o agenda).
+          </p>
+          <ul class="card-list">
+            <li>Estructura de guion con IA + psicología</li>
+            <li>Hooks específicos para tu nicho</li>
+            <li>Textos en pantalla claros y legibles</li>
+            <li>Optimizado para anuncios y orgánico</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-tag">Branding digital</div>
+              <div class="card-title">Perfil y feed profesional</div>
+            </div>
+          </div>
+          <p>
+            Alineamos tu identidad visual para que tu Instagram se vea como el de una marca seria y confiable
+            aunque estés empezando.
+          </p>
+          <ul class="card-list">
+            <li>Re-diseño de biografía y highlights</li>
+            <li>Plantillas de carruseles y historias</li>
+            <li>Paleta de colores y tipografías definidas</li>
+            <li>Lineamientos para mantener coherencia</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-tag">Planes mensuales</div>
+              <div class="card-title">Gestión de contenido con IA</div>
+            </div>
+          </div>
+          <p>
+            Te acompañamos mes a mes para que no vuelvas a quedarte sin ideas ni sin contenido. Nosotros pensamos,
+            vos publicás y respondés ventas.
+          </p>
+          <ul class="card-list">
+            <li>Calendario mensual de contenido</li>
+            <li>Guiones de reels + copys listos</li>
+            <li>Piezas gráficas listas para subir</li>
+            <li>Análisis y ajustes según métricas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section id="precios" class="pricing-section">
+    <div class="section-inner">
+      <div class="section-kicker">Planes y precios</div>
+      <h2 class="section-title">50% de descuento de lanzamiento · Tu inversión vuelve en clientes.</h2>
+      <p class="section-subtitle">
+        Mostramos siempre el precio real y el precio con 50% OFF para que tus clientes vean el valor real del servicio.
+        Los valores están expresados en pesos argentinos (ARS).
+      </p>
+
+      <div class="pricing-grid grid-3">
+        <!-- VIDEOS PARA REDES -->
+        <div class="pricing-card popular">
+          <div class="pricing-badge">Videos para redes</div>
+          <div class="pricing-title">Reels estratégicos para tu marca</div>
+          <div class="pricing-sub">Ideal para emprendedores que quieren vender con video sin volverse editores.</div>
+
+          <div class="price-discount-label">Todos los ítems a 50% OFF sobre el precio real</div>
+
+          <div class="price-table">
+            <div class="price-item">
+              <div class="price-item-title">🎥 Reel corto (hasta 30s, edición completa)</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$50.000</span>
+                <span class="price-item-current">Ahora: $25.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+            </div>
+
+            <div class="price-item">
+              <div class="price-item-title">🎥 Pack de 4 reels al mes</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$160.000</span>
+                <span class="price-item-current">Ahora: $80.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+            </div>
+
+            <div class="price-item">
+              <div class="price-item-title">🎥 Pack de 8 reels al mes</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$280.000</span>
+                <span class="price-item-current">Ahora: $140.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-pricing" onclick="window.open('https://wa.me/5491164834483?text=Hola,%20quiero%20contratar%20los%20videos%20para%20redes%20de%20NeuroFusión','_blank')">
+            Quiero los videos para redes
+          </button>
+          <div class="pricing-note">
+            Perfecto si hoy casi no publicás o tus reels no convierten en consultas.
+          </div>
+        </div>
+
+        <!-- DISEÑO + BRANDING -->
+        <div class="pricing-card">
+          <div class="pricing-badge">Diseño + Branding</div>
+          <div class="pricing-title">Identidad visual y piezas para redes</div>
+          <div class="pricing-sub">Para que tu perfil se vea tan profesional como lo que ofrecés.</div>
+
+          <div class="price-discount-label">Todos los ítems a 50% OFF sobre el precio real</div>
+
+          <div class="price-table">
+            <div class="price-item">
+              <div class="price-item-title">🎨 Pack de 10 piezas (posts e historias)</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$70.000</span>
+                <span class="price-item-current">Ahora: $35.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+            </div>
+
+            <div class="price-item">
+              <div class="price-item-title">🎨 Pack de 20 piezas</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$120.000</span>
+                <span class="price-item-current">Ahora: $60.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+            </div>
+
+            <div class="price-item">
+              <div class="price-item-title">🧠 Branding express</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$160.000</span>
+                <span class="price-item-current">Ahora: $80.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+              <div class="price-item-prices">
+                <span>Incluye logo, colores, tipografías y portada para redes.</span>
+              </div>
+            </div>
+
+            <div class="price-item">
+              <div class="price-item-title">🧠 Branding completo con manual básico</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$300.000</span>
+                <span class="price-item-current">Ahora: $150.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-pricing" onclick="window.open('https://wa.me/5491164834483?text=Hola,%20quiero%20información%20sobre%20diseño%20y%20branding%20con%20NeuroFusión','_blank')">
+            Quiero mejorar mi branding
+          </button>
+          <div class="pricing-note">
+            Ideal si tu perfil no refleja todavía el nivel real de tu servicio.
+          </div>
+        </div>
+
+        <!-- COPY + GESTIÓN MENSUAL -->
+        <div class="pricing-card">
+          <div class="pricing-badge">Copy + Gestión mensual</div>
+          <div class="pricing-title">Texto que vende y contenido constante</div>
+          <div class="pricing-sub">Para que nunca más te quedes sin ideas ni sin contenido.</div>
+
+          <div class="price-discount-label">Todos los ítems a 50% OFF sobre el precio real</div>
+
+          <div class="price-table">
+            <div class="price-item">
+              <div class="price-item-title">✍️ 10 guiones para reels</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$50.000</span>
+                <span class="price-item-current">Ahora: $25.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+            </div>
+
+            <div class="price-item">
+              <div class="price-item-title">✍️ 15 textos para posts e historias</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$40.000</span>
+                <span class="price-item-current">Ahora: $20.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+            </div>
+
+            <div class="price-item">
+              <div class="price-item-title">✍️ Combo guiones + textos</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$80.000</span>
+                <span class="price-item-current">Ahora: $40.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+              <div class="price-item-prices">
+                <span>Incluye 10 guiones para reels + 15 textos para posts e historias.</span>
+              </div>
+            </div>
+
+            <div class="price-item">
+              <div class="price-item-title">📅 Plan Start (8 posts + 4 reels al mes)</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$300.000</span>
+                <span class="price-item-current">Ahora: $150.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+            </div>
+
+            <div class="price-item">
+              <div class="price-item-title">📅 Plan Pro (16 posts + 8 reels al mes)</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$500.000</span>
+                <span class="price-item-current">Ahora: $250.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-pricing" onclick="window.open('https://wa.me/5491164834483?text=Hola,%20quiero%20la%20gestión%20mensual%20de%20contenido%20de%20NeuroFusión','_blank')">
+            Quiero el plan de contenido
+          </button>
+          <div class="pricing-note">
+            Para quienes quieren delegar la parte creativa y enfocarse en atender clientes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO + RESULTADOS -->
+  <section id="clientes">
+    <div class="section-inner">
+      <div class="section-kicker">Cómo trabajamos</div>
+      <h2 class="section-title">Proceso simple, enfoque premium.</h2>
+      <p class="section-subtitle">
+        No te llenamos de tecnicismos. Te guiamos paso a paso y hacemos el trabajo pesado por vos:
+        estrategia, ideas, textos y diseño.
+      </p>
+
+      <div class="grid grid-2">
+        <div>
+          <div class="pill-row">
+            <div class="pill">100% online</div>
+            <div class="pill">Enfocado en venta</div>
+            <div class="pill">Acompañamiento real</div>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div>
+                <div class="step-title">Diagnóstico rápido de tu cuenta</div>
+                <div>
+                  Revisamos tu Instagram, tu propuesta y tu nicho. Te mostramos por qué hoy
+                  tu perfil no está vendiendo lo que podría.
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div>
+                <div class="step-title">Estrategia y estructura de contenido</div>
+                <div>
+                  Definimos qué tipo de contenido necesitás: reels de venta, autoridad, prueba social,
+                  objeciones, etc. Todo adaptado a tu negocio.
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div>
+                <div class="step-title">Implementación y ajustes</div>
+                <div>
+                  Te entregamos todo listo para publicar y te acompañamos a leer métricas, ajustar
+                  y mejorar mes a mes.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-kicker">Resultados</div>
+          <h3 style="font-size:1.1rem; margin-bottom:0.9rem;">Lo que dicen quienes ya trabajaron su marca con NeuroFusión</h3>
+
+          <div class="testimonial-grid">
+            <div class="testimonial">
+              “Después de trabajar con NeuroFusión mi Instagram dejó de parecer un hobby.
+              En tres semanas empecé a recibir mensajes de gente que por fin entendía qué ofrecía
+              y cuánto costaba.”
+              <div class="testimonial-name">— Laura, coach de bienestar</div>
+              <div class="testimonial-tag">Renovación de perfil + Pack reels</div>
+            </div>
+
+            <div class="testimonial">
+              “Yo no tenía tiempo ni ideas para crear contenido. Ahora solo grabo lo que me mandan,
+              ellos se encargan del resto. Pasé de 1 o 2 consultas por semana a 2 o 3 por día.”
+              <div class="testimonial-name">— Martín, consultor de negocios</div>
+              <div class="testimonial-tag">Gestión mensual NeuroFusión</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="section-inner">
+      <div class="section-kicker">Contacto</div>
+      <h2 class="section-title">Contame en qué estás y te digo cuál servicio te conviene.</h2>
+      <p class="section-subtitle">
+        No es una plantilla genérica. Analizamos tu caso puntual y te proponemos la combinación de servicios
+        que mejor encaje con tu momento y objetivos.
+      </p>
+
+      <div class="contact-box">
+        <form class="contact-form" onsubmit="return false;">
+          <div>
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" />
+          </div>
+          <div>
+            <label>Email</label>
+            <input type="email" placeholder="tunombre@ejemplo.com" />
+          </div>
+          <div>
+            <label>Instagram / Web</label>
+            <input type="text" placeholder="@tuusuario o link a tu web" />
+          </div>
+          <div>
+            <label>¿Qué te gustaría lograr con tu marca?</label>
+            <textarea placeholder="Ej: llenar mi agenda de sesiones, vender más planes mensuales, profesionalizar mi presencia online..."></textarea>
+          </div>
+          <button type="button" class="btn-primary" onclick="alert('Para activar este formulario conectalo a tu email o herramienta favorita. Mientras tanto podés escribirnos por WhatsApp.')">
+            Enviar consulta (ejemplo)
+          </button>
+          <div class="contact-note">
+            *Para usar este formulario de verdad podés conectarlo a tu email, Notion, Google Sheets o la herramienta que prefieras.
+          </div>
+        </form>
+
+        <div class="whatsapp-box">
+          <strong>¿Preferís ir directo al grano?</strong>
+          <span>Escribinos por WhatsApp, contanos brevemente qué ofrecés y te respondemos con opciones concretas para tu caso.</span>
+          <a
+            class="whatsapp-link"
+            href="https://wa.me/5491164834483?text=Hola,%20quiero%20mejorar%20mi%20Instagram%20y%20mi%20marca%20con%20NeuroFusión"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Enviar mensaje por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> NeuroFusión · Contenido, Branding y Copy con IA · Todos los derechos reservados
+  </footer>
+
+  <script>
+    // Año automático
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
