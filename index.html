@@ -80,10 +80,44 @@
       background: transparent;
       color: #e5e7eb;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
     }
 
     .btn-nav:hover {
       background: rgba(15, 23, 42, 0.9);
+    }
+
+    /* Botón cuando está en modo avatar */
+    .btn-nav.avatar-btn {
+      padding: 0.25rem 0.4rem;
+      border-radius: 999px;
+      border-color: rgba(148, 163, 184, 0.8);
+      background: transparent;
+    }
+
+    .avatar-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: radial-gradient(circle at top, #0b1120, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: #e5e7eb;
+    }
+
+    .avatar-circle::before {
+      content: "";
+      width: 50%;
+      height: 50%;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      opacity: 0.8;
     }
 
     /* HERO */
@@ -535,6 +569,12 @@
       margin-top: 0.2rem;
     }
 
+    .auth-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 0.5rem;
+    }
+
     /* PROCESO + RESULTADOS */
     .pill-row {
       display: flex;
@@ -735,7 +775,12 @@
         <a href="#login">Iniciar sesión</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <button class="btn-nav" onclick="document.getElementById('login').scrollIntoView({behavior:'smooth'});">
+      <button
+        id="nav-login-btn"
+        class="btn-nav"
+        type="button"
+        onclick="scrollToLogin()"
+      >
         Iniciar sesión
       </button>
     </div>
@@ -762,7 +807,7 @@
         </div>
 
         <div class="hero-actions">
-          <button class="btn-primary" onclick="document.getElementById('login').scrollIntoView({behavior:'smooth'});">
+          <button class="btn-primary" onclick="scrollToLogin()">
             Iniciar sesión / Registrarme
           </button>
           <button class="btn-secondary" onclick="document.getElementById('precios').scrollIntoView({behavior:'smooth'});">
@@ -1047,24 +1092,28 @@
       <div class="section-kicker">Cuenta</div>
       <h2 class="section-title">Iniciá sesión o registrate con tu Gmail.</h2>
       <p class="section-subtitle">
-        Guardamos tu correo en este dispositivo para asociar tus compras (reels, branding, planes de contenido)
-        y poder contactarte después del pago. No usás contraseña ni creás una cuenta complicada: solo tu email.
+        Guardamos tu correo y una contraseña en este dispositivo para asociar tus compras (reels, branding, planes de contenido)
+        y poder contactarte después del pago. No es un login bancario: usá una contraseña simple que solo uses acá.
       </p>
 
       <div class="auth-box">
-        <div class="auth-title">Tus datos de contacto</div>
+        <div class="auth-title">Tus datos de acceso</div>
         <div class="auth-sub">
-          Ingresá tu correo (preferentemente Gmail). Cuando compres un servicio, usaremos este mail para ubicarte
-          y enviarte la entrega de tu compra.
+          Ingresá tu Gmail y una contraseña. La próxima vez que entres, si ya guardaste tus datos,
+          te vamos a mostrar que tu sesión está iniciada.
         </div>
         <div class="auth-row">
           <input id="auth-email" class="auth-input" type="email" placeholder="tuemail@gmail.com" />
+          <input id="auth-password" class="auth-input" type="password" placeholder="Contraseña para NeuroFusión" />
           <button type="button" class="auth-btn" onclick="registerOrLoginIndex()">
-            Guardar / Actualizar correo
+            Crear cuenta / Iniciar sesión
           </button>
         </div>
         <div id="auth-status" class="auth-status">
           No iniciaste sesión todavía.
+        </div>
+        <div class="auth-note">
+          ⚠️ Recomendación: no uses una contraseña importante (banco, mail, etc.). Esto es solo para este sitio y se guarda en tu propio navegador.
         </div>
       </div>
     </div>
@@ -1206,28 +1255,59 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    function scrollToLogin() {
+      const section = document.getElementById('login');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function setLoggedInUI(email) {
+      const btn = document.getElementById('nav-login-btn');
+      if (!btn) return;
+      btn.classList.add('avatar-btn');
+      btn.innerHTML = '<div class="avatar-circle" title="' + email + '"></div>';
+      btn.onclick = scrollToLogin;
+    }
+
+    function setLoggedOutUI() {
+      const btn = document.getElementById('nav-login-btn');
+      if (!btn) return;
+      btn.classList.remove('avatar-btn');
+      btn.textContent = 'Iniciar sesión';
+      btn.onclick = scrollToLogin;
+    }
+
     function updateAuthStatusIndex() {
       const storedEmail = localStorage.getItem('neurofusionEmail');
       const statusEl = document.getElementById('auth-status');
-      const inputEl = document.getElementById('auth-email');
+      const inputEmail = document.getElementById('auth-email');
+      const inputPass = document.getElementById('auth-password');
 
       if (!statusEl) return;
 
       if (storedEmail) {
         statusEl.textContent = 'Sesión iniciada como: ' + storedEmail;
-        if (inputEl && !inputEl.value) {
-          inputEl.value = storedEmail;
+        if (inputEmail && !inputEmail.value) inputEmail.value = storedEmail;
+        if (inputPass && !inputPass.value) {
+          // No mostramos contraseña guardada por seguridad visual
         }
+        setLoggedInUI(storedEmail);
       } else {
         statusEl.textContent = 'No iniciaste sesión todavía.';
+        setLoggedOutUI();
       }
     }
 
     function registerOrLoginIndex() {
-      const inputEl = document.getElementById('auth-email');
-      if (!inputEl) return;
+      const inputEmail = document.getElementById('auth-email');
+      const inputPass = document.getElementById('auth-password');
 
-      const email = (inputEl.value || '').trim();
+      if (!inputEmail || !inputPass) return;
+
+      const email = (inputEmail.value || '').trim();
+      const password = (inputPass.value || '').trim();
+
       if (!email) {
         alert('Ingresá tu correo (preferentemente Gmail).');
         return;
@@ -1236,10 +1316,17 @@
         alert('Ingresá un correo válido.');
         return;
       }
+      if (!password) {
+        alert('Elegí una contraseña para tu cuenta de NeuroFusión (no uses una importante).');
+        return;
+      }
 
+      // Guardamos en el navegador del usuario
       localStorage.setItem('neurofusionEmail', email);
+      localStorage.setItem('neurofusionPassword', password);
+
       updateAuthStatusIndex();
-      alert('Tu correo se guardó en este dispositivo. Lo usaremos para asociar tus compras.');
+      alert('Tu cuenta se guardó en este dispositivo. La próxima vez te vamos a mostrar que tu sesión está iniciada.');
     }
 
     document.addEventListener('DOMContentLoaded', updateAuthStatusIndex);
