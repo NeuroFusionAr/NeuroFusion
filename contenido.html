@@ -79,6 +79,43 @@
     }
     .price-item-button:hover { background: rgba(15, 23, 42, 0.9); }
 
+    /* Caja de registro / login */
+    .auth-box {
+      margin: 1.8rem auto 2rem;
+      border-radius: 1.1rem;
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      background: radial-gradient(circle at top, #020617, #020617);
+      padding: 1.2rem 1.4rem;
+      font-size: 0.9rem;
+    }
+    .auth-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .auth-sub { font-size: 0.85rem; color: #9ca3af; margin-bottom: 0.8rem; }
+    .auth-row { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-bottom: 0.5rem; }
+    .auth-input {
+      flex: 1;
+      min-width: 220px;
+      padding: 0.5rem 0.7rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: #020617;
+      color: #f9fafb;
+      font-size: 0.86rem;
+    }
+    .auth-btn {
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(90deg, #0ea5e9, #22d3ee);
+      color: #020617;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .auth-btn:hover { opacity: 0.92; }
+    .auth-status { font-size: 0.8rem; color: #9ca3af; }
+
+    /* Caja de pago / confirmación */
     .payment-box {
       margin-top: 1.5rem;
       border-radius: 1.1rem;
@@ -104,10 +141,47 @@
       font-size: 0.9rem;
       font-weight: 500;
       cursor: pointer;
+      text-decoration: none;
     }
     .payment-btn:hover { border-color: #38bdf8; }
     .payment-btn.mp { border-color: #22c55e; }
     .payment-btn.paypal { border-color: #0ea5e9; }
+
+    .confirm-box {
+      margin-top: 1.2rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(30, 64, 175, 0.7);
+    }
+    .confirm-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .confirm-sub { font-size: 0.8rem; color: #9ca3af; margin-bottom: 0.7rem; }
+
+    .contact-row { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin-bottom: 0.7rem; }
+    .contact-input {
+      flex: 1;
+      min-width: 220px;
+      padding: 0.5rem 0.7rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: #020617;
+      color: #f9fafb;
+      font-size: 0.86rem;
+    }
+    .contact-label { font-size: 0.82rem; }
+
+    .confirm-main-btn {
+      display: inline-block;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(90deg, #0ea5e9, #22d3ee);
+      color: #020617;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 0.2rem;
+    }
+    .confirm-main-btn:hover { opacity: 0.93; }
 
     .helper-note { font-size: 0.8rem; color: #9ca3af; margin-top: 0.6rem; }
 
@@ -136,17 +210,42 @@
       </h1>
       <p class="hero-subtitle">
         Guiones, textos y gestión mensual de contenido para que nunca más te quedes sin qué publicar.
-        Elegí un plan y luego el método de pago.
+        Primero te registrás con tu Gmail, elegís un plan, pagás y después confirmás la compra para que te contactemos.
       </p>
     </div>
   </section>
 
   <main class="section">
-    <h2 class="section-title">1. Elegí tu plan de copy o gestión de contenido</h2>
+    <!-- PASO 1: REGISTRO / LOGIN CON GMAIL -->
+    <div class="auth-box">
+      <div class="auth-title">1. Registrate o iniciá sesión con tu Gmail</div>
+      <div class="auth-sub">
+        Usamos tu correo para asociar tu compra y poder contactarte con la entrega de los guiones, textos o plan mensual.
+        No usamos contraseña: solo guardamos tu email en este dispositivo.
+      </div>
+      <div class="auth-row">
+        <input
+          id="auth-email"
+          class="auth-input"
+          type="email"
+          placeholder="tuemail@gmail.com"
+        />
+        <button type="button" class="auth-btn" onclick="registerOrLogin()">
+          Guardar mi cuenta
+        </button>
+      </div>
+      <div id="auth-status" class="auth-status">
+        No iniciaste sesión todavía.
+      </div>
+    </div>
+
+    <h2 class="section-title">2. Elegí tu plan de copy o gestión de contenido</h2>
     <p class="section-subtitle">
-      Todos los planes están al 50% OFF de lanzamiento. Hacé clic en “Elegir este servicio” para ver los medios de pago.
+      Todos los planes están al 50% OFF de lanzamiento. Hacé clic en “Elegir este servicio” para seleccionar
+      el plan. Después vas a poder pagar y confirmar tu compra.
     </p>
 
+    <!-- PLANES DE COPY / CONTENIDO -->
     <div class="pricing-card">
       <div class="pricing-title">✍️ 10 guiones para reels</div>
       <div class="pricing-sub">Guiones listos para grabar, con hooks y llamadas a la acción pensadas para vender.</div>
@@ -272,10 +371,12 @@
       </button>
     </div>
 
+    <!-- PASO 3 Y 4: PAGAR + CONFIRMAR COMPRA -->
     <div id="payment-box" class="payment-box">
-      <div class="payment-title">2. Elegí cómo querés pagar</div>
+      <div class="payment-title">3. Elegí cómo querés pagar</div>
       <div class="payment-sub">
         Primero seleccioná un plan arriba. Acá abajo vas a ver el detalle y los botones de pago.
+        El pago se hace en una pestaña nueva segura.
       </div>
       <div class="payment-plan">
         Plan elegido: <span id="selected-plan-name">ninguno todavía</span><br />
@@ -288,10 +389,32 @@
         <a id="pay-paypal" class="payment-btn paypal" href="#" target="_blank" rel="noopener noreferrer">
           Pagar con PayPal
         </a>
-        <a id="pay-card" class="payment-btn" href="#" target="_blank" rel="noopener noreferrer">
-          Pagar con tarjeta (vía Mercado Pago)
-        </a>
       </div>
+
+      <div class="confirm-box">
+        <div class="confirm-title">4. Ya pagué, quiero que me contacten</div>
+        <div class="confirm-sub">
+          Después de realizar el pago, completá tu correo y confirmá la compra para que te contactemos
+          con los siguientes pasos y la entrega de tu contenido.
+        </div>
+        <div class="contact-row">
+          <div class="contact-label">Tu correo de contacto (Gmail):</div>
+          <input
+            id="contact-email"
+            class="contact-input"
+            type="email"
+            placeholder="tuemail@gmail.com"
+          />
+        </div>
+        <button type="button" class="confirm-main-btn" onclick="confirmPurchase()">
+          Confirmar compra y avisar por WhatsApp
+        </button>
+        <div class="helper-note">
+          Esto no verifica automáticamente el pago (porque se procesa en Mercado Pago / PayPal),
+          pero nos llega tu mensaje con el plan elegido y tu correo para validar la compra y enviarte todo.
+        </div>
+      </div>
+
       <div class="helper-note">
         Si preferís coordinar por otra vía (transferencia, efectivo, etc.), podés escribirnos por WhatsApp al
         <a href="https://wa.me/5491164834483" target="_blank" rel="noopener noreferrer">+54 9 11 6483-4483</a>.
@@ -300,16 +423,100 @@
   </main>
 
   <script>
+    let currentUserEmail = null;
+    let currentPlanName = null;
+    let currentPlanPrice = null;
+    let currentMpUrl = null;
+    let currentPaypalUrl = null;
+
+    function updateAuthStatus() {
+      const storedEmail = localStorage.getItem('neurofusionEmail');
+      const statusEl = document.getElementById('auth-status');
+      const inputEl = document.getElementById('auth-email');
+      const contactInput = document.getElementById('contact-email');
+
+      if (storedEmail) {
+        currentUserEmail = storedEmail;
+        statusEl.textContent = 'Sesión iniciada como: ' + storedEmail;
+        if (inputEl && !inputEl.value) inputEl.value = storedEmail;
+        if (contactInput && !contactInput.value) contactInput.value = storedEmail;
+      } else {
+        statusEl.textContent = 'No iniciaste sesión todavía.';
+      }
+    }
+
+    function registerOrLogin() {
+      const emailInput = document.getElementById('auth-email');
+      const email = emailInput.value.trim();
+
+      if (!email) {
+        alert('Ingresá tu correo (preferentemente Gmail).');
+        return;
+      }
+
+      if (!email.includes('@')) {
+        alert('Ingresá un correo válido.');
+        return;
+      }
+
+      currentUserEmail = email;
+      localStorage.setItem('neurofusionEmail', email);
+      updateAuthStatus();
+      const contactInput = document.getElementById('contact-email');
+      if (contactInput && !contactInput.value) contactInput.value = email;
+      alert('Tu correo se guardó en este dispositivo.');
+    }
+
     function selectPlan(name, price, mpUrl, paypalUrl) {
+      currentPlanName = name;
+      currentPlanPrice = price;
+      currentMpUrl = mpUrl;
+      currentPaypalUrl = paypalUrl;
+
       document.getElementById('selected-plan-name').textContent = name;
       document.getElementById('selected-plan-price').textContent = price;
 
-      document.getElementById('pay-mp').href = mpUrl;
-      document.getElementById('pay-paypal').href = paypalUrl;
-      document.getElementById('pay-card').href = mpUrl;
+      document.getElementById('pay-mp').href = mpUrl || '#';
+      document.getElementById('pay-paypal').href = paypalUrl || '#';
 
       document.getElementById('payment-box').scrollIntoView({ behavior: 'smooth' });
     }
+
+    function confirmPurchase() {
+      if (!currentPlanName || !currentPlanPrice) {
+        alert('Primero elegí un servicio (plan de copy / contenido).');
+        return;
+      }
+
+      const contactInput = document.getElementById('contact-email');
+      const email = contactInput.value.trim();
+
+      if (!email) {
+        alert('Ingresá tu correo para que podamos contactarte por la compra.');
+        return;
+      }
+      if (!email.includes('@')) {
+        alert('Ingresá un correo válido.');
+        return;
+      }
+
+      currentUserEmail = email;
+      localStorage.setItem('neurofusionEmail', email);
+      updateAuthStatus();
+
+      const mensaje = encodeURIComponent(
+        'Hola, acabo de realizar una compra en NeuroFusión.%0A%0A' +
+        'Servicio: ' + currentPlanName + '%0A' +
+        'Precio: ' + currentPlanPrice + '%0A' +
+        'Correo: ' + email + '%0A%0A' +
+        'Te envío este mensaje desde la página de COPY/CONTENIDO para que puedan verificar el pago y enviarme los siguientes pasos.'
+      );
+
+      const url = 'https://wa.me/5491164834483?text=' + mensaje;
+      window.open(url, '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', updateAuthStatus);
   </script>
 </body>
 </html>
