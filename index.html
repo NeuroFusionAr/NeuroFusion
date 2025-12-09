@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NeuroFusión · Contenido, Branding y Copy con IA</title>
-  <meta name="description" content="NeuroFusión: contenido, branding y copy con IA para convertir tu Instagram en una marca premium que vende todos los días. Planes mensuales, reels, diseño, branding y textos pensados para coaches, consultores y negocios de servicios.">
+  <meta name="description" content="NeuroFusión: contenido, branding y copy con IA para convertir tu Instagram en una marca premium que vende todos los días. Planes mensuales, reels, diseño, branding y textos para coaches, consultores y negocios de servicios.">
   <style>
     * {
       margin: 0;
@@ -90,7 +90,6 @@
       background: rgba(15, 23, 42, 0.9);
     }
 
-    /* Botón cuando está en modo avatar */
     .btn-nav.avatar-btn {
       padding: 0.25rem 0.4rem;
       border-radius: 999px;
@@ -121,7 +120,6 @@
       opacity: 0.9;
     }
 
-    /* HERO */
     .hero {
       padding: 3.5rem 1.5rem 3rem;
       background: radial-gradient(circle at top, #0b1120, #020617);
@@ -160,6 +158,12 @@
       color: #cbd5f5;
       margin-bottom: 1.5rem;
       font-size: 0.98rem;
+    }
+
+    .hero-subtitle-2 {
+      color: #9ca3af;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
     }
 
     .hero-badges {
@@ -305,7 +309,6 @@
       color: #a5b4fc;
     }
 
-    /* SECCIONES GENERALES */
     section {
       padding: 3rem 1.5rem;
     }
@@ -349,7 +352,6 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    /* SERVICIOS */
     .card {
       border-radius: 1.1rem;
       padding: 1.3rem;
@@ -386,7 +388,6 @@
       margin-bottom: 0.25rem;
     }
 
-    /* PRECIOS (resumen) */
     .pricing-section {
       background: radial-gradient(circle at top, #020617, #020617);
       border-top: 1px solid rgba(30, 64, 175, 0.7);
@@ -507,7 +508,6 @@
       opacity: 0.92;
     }
 
-    /* PROCESO + RESULTADOS */
     .pill-row {
       display: flex;
       flex-wrap: wrap;
@@ -553,7 +553,6 @@
       margin-bottom: 0.15rem;
     }
 
-    /* TESTIMONIOS */
     .testimonial-grid {
       display: grid;
       gap: 1rem;
@@ -579,7 +578,6 @@
       color: #9ca3af;
     }
 
-    /* CONTACTO */
     .contact-box {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -661,7 +659,6 @@
       background: #020617;
     }
 
-    /* MODAL LOGIN */
     .modal-backdrop {
       position: fixed;
       inset: 0;
@@ -821,7 +818,6 @@
     </div>
   </header>
 
-  <!-- MODAL / POPUP LOGIN -->
   <div id="login-modal" class="modal-backdrop" onclick="backdropClick(event)">
     <div class="modal-card">
       <div class="modal-header">
@@ -829,8 +825,8 @@
         <button class="modal-close" type="button" onclick="closeLoginModal()">✕</button>
       </div>
       <div class="modal-sub">
-        Usamos tu cuenta para asociar tus compras (reels, branding, planes de contenido) y para
-        enviarte el material y los siguientes pasos después del pago. Se guarda <strong>solo</strong> en este dispositivo.
+        Usamos tu cuenta para asociar tus compras de reels, branding o planes de contenido y poder enviarte el material y los siguientes pasos. 
+        Se guarda en tu propio navegador: no es un inicio de sesión bancario ni de Gmail real.
       </div>
 
       <div class="modal-row">
@@ -855,7 +851,6 @@
     </div>
   </div>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
       <div>
@@ -866,8 +861,10 @@
         <p class="hero-subtitle">
           En NeuroFusión transformamos tu Instagram en una vidriera profesional:
           reels, piezas de diseño, branding y copys estratégicos con IA para que dejes de perder
-          clientes por un perfil que no refleja el valor que tenés. Trabajamos con coaches, consultores
-          y negocios de servicios.
+          clientes por un perfil que no refleja el valor que tenés.
+        </p>
+        <p class="hero-subtitle-2">
+          Trabajamos especialmente con <strong>coaches, consultores y negocios de servicios</strong> que quieren verse como lo que realmente son: marcas confiables y de alto valor.
         </p>
 
         <div class="hero-badges">
@@ -906,7 +903,7 @@
             <div class="ba-label good">Después con NeuroFusión</div>
             <div class="ba-item">• Marca clara, moderna y coherente</div>
             <div class="ba-item">• Reels optimizados para venta</div>
-            <div class="ba-item">• Copy que explica, conecta y vende</div>
+            <div class="ba-item">• Copy con IA que explica, conecta y vende</div>
             <div class="ba-item">• Más consultas calificadas por semana</div>
           </div>
         </div>
@@ -921,14 +918,13 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
   <section id="servicios">
     <div class="section-inner">
       <div class="section-kicker">Qué hacemos</div>
       <h2 class="section-title">Servicios pensados para vender, no solo para “verse lindo”.</h2>
       <p class="section-subtitle">
         Cada pieza de contenido, cada reel y cada texto se diseña con un objetivo: que más personas
-        entiendan qué ofrecés, confíen en vos y te escriban para comprar. Usamos IA, pero siempre con criterio humano.
+        entiendan qué ofrecés, confíen en vos y te escriban para comprar.
       </p>
 
       <div class="grid grid-3">
@@ -986,18 +982,17 @@
     </div>
   </section>
 
-  <!-- PRECIOS RESUMEN -->
   <section id="precios" class="pricing-section">
     <div class="section-inner">
       <div class="section-kicker">Planes y precios</div>
       <h2 class="section-title">50% de descuento de lanzamiento · Tu inversión vuelve en clientes.</h2>
       <p class="section-subtitle">
-        Mostramos siempre el precio real y el precio con 50% OFF para que veas el valor del servicio.
-        Los valores están expresados en pesos argentinos (ARS). El pago se hace con Mercado Pago (incluye tarjeta) o PayPal.
+        Mostramos siempre el precio real y el precio con 50% OFF para que tus clientes vean el valor real del servicio.
+        Los valores están expresados en pesos argentinos (ARS). Los pagos se hacen con <strong>Mercado Pago</strong> (incluye tarjetas y débito) o <strong>PayPal</strong>.
       </p>
 
       <div class="pricing-grid grid-3">
-        <!-- VIDEOS PARA REDES -->
+        <!-- VIDEOS PARA REDES + PACK NAVIDEÑO -->
         <div class="pricing-card popular">
           <div class="pricing-badge">Videos para redes</div>
           <div class="pricing-title">Reels estratégicos para tu marca</div>
@@ -1009,8 +1004,8 @@
             <div class="price-item">
               <div class="price-item-title">Reel corto (hasta 30s)</div>
               <div class="price-item-prices">
-                <span class="price-item-original">$50.000</span>
-                <span class="price-item-current">Ahora: $25.000</span>
+                <span class="price-item-original">$60.000</span>
+                <span class="price-item-current">Ahora: $30.000</span>
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
             </div>
@@ -1030,6 +1025,18 @@
                 <span class="price-item-tag">(50% OFF)</span>
               </div>
             </div>
+            <!-- PACK NAVIDEÑO (TIEMPO LIMITADO) -->
+            <div class="price-item">
+              <div class="price-item-title">🎄 Pack navideño (tiempo limitado)</div>
+              <div class="price-item-prices">
+                <span class="price-item-original">$60.000</span>
+                <span class="price-item-current">Ahora: $30.000</span>
+                <span class="price-item-tag">(50% OFF)</span>
+              </div>
+              <div class="pricing-note">
+                Incluye <strong>3 diseños</strong> + <strong>1 reel</strong> + <strong>1 carrusel festivo</strong> para tu campaña de Navidad.
+              </div>
+            </div>
           </div>
 
           <button class="btn-pricing" onclick="window.open('videos.html','_blank')">
@@ -1037,7 +1044,7 @@
           </button>
 
           <div class="pricing-note">
-            Si querés probar algo puntual, arrancá con 1 reel. Si ya estás vendiendo, pasá a un pack mensual.
+            Si hoy casi no publicás o tus reels no convierten en consultas, empezá por acá para testear rápido.
           </div>
         </div>
 
@@ -1089,7 +1096,7 @@
           </button>
 
           <div class="pricing-note">
-            Si tu cuenta se ve desprolija o “mezclada”, empezá por acá antes de invertir en anuncios.
+            Si tu perfil no refleja todavía el nivel real de tu servicio, este es el primer paso.
           </div>
         </div>
 
@@ -1149,21 +1156,36 @@
           </button>
 
           <div class="pricing-note">
-            Si ya tenés clientes pero no constancia en redes, este bloque te da ideas, textos y ritmo.
+            Si ya tenés clientes pero querés más constancia y volumen, este es tu camino.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROCESO + RESULTADOS -->
+  <section id="quien">
+    <div class="section-inner">
+      <div class="section-kicker">Quién está detrás</div>
+      <h2 class="section-title">NeuroFusión no es una agencia fría, es tu partner creativo.</h2>
+      <p class="section-subtitle">
+        Detrás de NeuroFusión hay una persona real que entiende lo que es vender servicios, lidiar con la inseguridad de mostrarse en redes y
+        sentir que el tiempo no alcanza para “hacer todo bien”. Por eso combinamos IA, estrategia y diseño para que no tengas que ser
+        editor, diseñador y copywriter a la vez.
+      </p>
+      <p class="section-subtitle">
+        El objetivo es simple: que tu Instagram deje de ser un lugar donde subís cosas “cuando podés” y se convierta en un sistema
+        que atrae, explica y vende lo que hacés todos los días, incluso cuando no estás conectado.
+      </p>
+    </div>
+  </section>
+
   <section id="clientes">
     <div class="section-inner">
       <div class="section-kicker">Cómo trabajamos</div>
       <h2 class="section-title">Proceso simple, enfoque premium.</h2>
       <p class="section-subtitle">
         No te llenamos de tecnicismos. Te guiamos paso a paso y hacemos el trabajo pesado por vos:
-        estrategia, ideas, textos y diseño. Vos te enfocás en atender a tus clientes.
+        estrategia, ideas, textos y diseño.
       </p>
 
       <div class="grid grid-2">
@@ -1233,24 +1255,6 @@
     </div>
   </section>
 
-  <!-- QUIÉN ESTÁ DETRÁS -->
-  <section>
-    <div class="section-inner">
-      <div class="section-kicker">Quién está detrás</div>
-      <h2 class="section-title">NeuroFusión es un partner creativo, no una agencia fría.</h2>
-      <p class="section-subtitle">
-        Detrás de NeuroFusión hay alguien que vive el mismo juego que vos: vender servicios, lidiar con redes,
-        crear contenido, probar cosas nuevas y aprender qué funciona en la vida real. Por eso mezclamos IA,
-        estrategia y diseño para bajar a tierra lo que tu negocio necesita hoy, no lo que “se supone” que deberías hacer.
-      </p>
-      <p class="section-subtitle">
-        El foco está en algo simple: que más personas entiendan lo que ofrecés, te perciban como una marca seria
-        y se animen a escribirte para pedir precio, agendar o comprar.
-      </p>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
   <section id="contacto">
     <div class="section-inner">
       <div class="section-kicker">Contacto</div>
@@ -1354,7 +1358,6 @@
         statusEl.textContent = 'Sesión iniciada como: ' + storedEmail;
         if (inputEmail && !inputEmail.value) inputEmail.value = storedEmail;
         if (inputPass) {
-          // No mostramos la contraseña guardada por seguridad visual
           inputPass.value = '';
         }
         setLoggedInUI(storedEmail);
@@ -1380,20 +1383,3 @@
       if (!email.includes('@')) {
         alert('Ingresá un correo válido.');
         return;
-      }
-      if (!password) {
-        alert('Elegí una contraseña para tu cuenta de NeuroFusión (no uses una importante).');
-        return;
-      }
-
-      localStorage.setItem('neurofusionEmail', email);
-      localStorage.setItem('neurofusionPassword', password);
-
-      updateAuthStatusIndex();
-      alert('Tu cuenta se guardó en este dispositivo. La próxima vez te vamos a mostrar que tu sesión está iniciada.');
-    }
-
-    document.addEventListener('DOMContentLoaded', updateAuthStatusIndex);
-  </script>
-</body>
-</html>
