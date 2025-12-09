@@ -31,7 +31,8 @@
     .eyebrow { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #38bdf8; margin-bottom: 0.4rem; }
     .hero-title { font-size: 1.9rem; font-weight: 700; margin-bottom: 0.7rem; }
     .hero-title span { background: linear-gradient(90deg, #0ea5e9, #22c55e); -webkit-background-clip: text; color: transparent; }
-    .hero-subtitle { font-size: 0.95rem; color: #cbd5f5; max-width: 650px; }
+    .hero-subtitle { font-size: 0.95rem; color: #cbd5f5; max-width: 650px; margin-bottom: 0.5rem; }
+    .hero-note { font-size: 0.85rem; color: #9ca3af; }
 
     .section { padding: 1.5rem 1.5rem 2.5rem; max-width: 900px; margin: 0 auto; }
     .section-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem; }
@@ -79,7 +80,6 @@
     }
     .price-item-button:hover { background: rgba(15, 23, 42, 0.9); }
 
-    /* Caja de registro / login */
     .auth-box {
       margin: 1.8rem auto 2rem;
       border-radius: 1.1rem;
@@ -115,7 +115,6 @@
     .auth-btn:hover { opacity: 0.92; }
     .auth-status { font-size: 0.8rem; color: #9ca3af; }
 
-    /* Caja de pago / confirmación */
     .payment-box {
       margin-top: 1.5rem;
       border-radius: 1.1rem;
@@ -206,12 +205,14 @@
     <div class="hero-inner">
       <div class="eyebrow">Videos para redes</div>
       <h1 class="hero-title">
-        Reels que <span>parecen agencia</span> sin que tengas que editar nada.
+        Elegí tu plan de <span>reels estratégicos</span> para vender con video.
       </h1>
       <p class="hero-subtitle">
-        Diseñamos y editamos reels pensados para vender: hooks claros, estructura que retiene y llamados a la acción
-        que llevan a la venta. Primero te registrás con tu Gmail, elegís un plan, pagás y después confirmás la compra
-        para que te contactemos.
+        Te damos reels listos para publicar: guion, estructura, edición pensada para retener y convertir.
+        Primero te registrás con tu Gmail, elegís un plan, pagás y después confirmás la compra para que te contactemos.
+      </p>
+      <p class="hero-note">
+        Si ya iniciaste sesión en la página principal, acá vamos a intentar completar tu correo automáticamente.
       </p>
     </div>
   </section>
@@ -221,8 +222,8 @@
     <div class="auth-box">
       <div class="auth-title">1. Registrate o iniciá sesión con tu Gmail</div>
       <div class="auth-sub">
-        Usamos tu correo para asociar tu compra y poder contactarte con la entrega de los reels,
-        feedback y próximas grabaciones. No usamos contraseña acá: solo tu email (la contraseña se maneja en el inicio).
+        Usamos tu correo para asociar tu compra y poder contactarte con la entrega de los reels y feedback.
+        No usamos contraseña acá: solo guardamos tu email en este dispositivo.
       </div>
       <div class="auth-row">
         <input
@@ -246,16 +247,16 @@
       el plan. Después vas a poder pagar y confirmar tu compra.
     </p>
 
-    <!-- PLANES DE VIDEOS -->
+    <!-- REEL CORTO (ACTUALIZADO A 60k -> 30k) -->
     <div class="pricing-card">
       <div class="pricing-title">🎥 Reel corto (hasta 30s, edición completa)</div>
-      <div class="pricing-sub">Ideal para probar el servicio o testear un mensaje de venta puntual.</div>
+      <div class="pricing-sub">Ideal para probar cómo responde tu audiencia con un solo video estratégico.</div>
       <div class="price-discount-label">50% OFF sobre el precio real</div>
       <div class="price-item">
         <div class="price-item-title">Precio</div>
         <div class="price-item-prices">
-          <span class="price-item-original">$50.000</span>
-          <span class="price-item-current">Ahora: $25.000</span>
+          <span class="price-item-original">$60.000</span>
+          <span class="price-item-current">Ahora: $30.000</span>
           <span class="price-item-tag">(50% OFF)</span>
         </div>
       </div>
@@ -263,7 +264,7 @@
         class="price-item-button"
         onclick="selectPlan(
           'Reel corto (hasta 30s, edición completa)',
-          '$25.000',
+          '$30.000',
           'https://mpago.la/2EtR3rg',
           'https://www.paypal.com/ncp/payment/5UVX7WL7ZD2VL'
         )"
@@ -272,9 +273,46 @@
       </button>
     </div>
 
+    <!-- PACK NAVIDEÑO (TIEMPO LIMITADO, MISMO LINK QUE REEL CORTO) -->
+    <div class="pricing-card">
+      <div class="pricing-title">🎄 Pack navideño (tiempo limitado)</div>
+      <div class="pricing-sub">
+        Pack especial de Navidad: ideal para darle un empujón a tu marca en estas fiestas.
+      </div>
+      <div class="price-discount-label">50% OFF sobre el precio real</div>
+      <div class="price-item">
+        <div class="price-item-title">Qué incluye</div>
+        <div class="price-item-prices">
+          <span class="price-item-current">
+            3 diseños + 1 reel + 1 carrusel festivo
+          </span>
+        </div>
+      </div>
+      <div class="price-item">
+        <div class="price-item-title">Precio</div>
+        <div class="price-item-prices">
+          <span class="price-item-original">$60.000</span>
+          <span class="price-item-current">Ahora: $30.000</span>
+          <span class="price-item-tag">(50% OFF)</span>
+        </div>
+      </div>
+      <button
+        class="price-item-button"
+        onclick="selectPlan(
+          'Pack navideño (3 diseños + 1 reel + 1 carrusel festivo)',
+          '$30.000',
+          'https://mpago.la/2EtR3rg',
+          'https://www.paypal.com/ncp/payment/5UVX7WL7ZD2VL'
+        )"
+      >
+        Elegir este servicio
+      </button>
+    </div>
+
+    <!-- PACK 4 REELS -->
     <div class="pricing-card">
       <div class="pricing-title">🎥 Pack de 4 reels al mes</div>
-      <div class="pricing-sub">Para mantener presencia constante en redes con una base sólida de video.</div>
+      <div class="pricing-sub">Para tener presencia constante sin sentir que vivís grabando contenido.</div>
       <div class="price-discount-label">50% OFF sobre el precio real</div>
       <div class="price-item">
         <div class="price-item-title">Precio mensual</div>
@@ -297,9 +335,10 @@
       </button>
     </div>
 
+    <!-- PACK 8 REELS -->
     <div class="pricing-card">
       <div class="pricing-title">🎥 Pack de 8 reels al mes</div>
-      <div class="pricing-sub">Para quienes quieren crecer agresivo con contenido en video.</div>
+      <div class="pricing-sub">Para ir fuerte con video y dominar la atención de tu audiencia.</div>
       <div class="price-discount-label">50% OFF sobre el precio real</div>
       <div class="price-item">
         <div class="price-item-title">Precio mensual</div>
@@ -327,7 +366,7 @@
       <div class="payment-title">3. Elegí cómo querés pagar</div>
       <div class="payment-sub">
         Primero seleccioná un plan arriba. Acá abajo vas a ver el detalle y los botones de pago.
-        El pago se hace en una pestaña nueva segura.
+        El pago se hace en una pestaña nueva segura con Mercado Pago (incluye tarjetas) o PayPal.
       </div>
       <div class="payment-plan">
         Plan elegido: <span id="selected-plan-name">ninguno todavía</span><br />
@@ -346,7 +385,7 @@
         <div class="confirm-title">4. Ya pagué, quiero que me contacten</div>
         <div class="confirm-sub">
           Después de realizar el pago, completá tu correo y confirmá la compra para que te contactemos
-          con los siguientes pasos, envío de materiales y coordinación de futuras piezas.
+          con los siguientes pasos y la entrega de tus reels.
         </div>
         <div class="contact-row">
           <div class="contact-label">Tu correo de contacto (Gmail):</div>
